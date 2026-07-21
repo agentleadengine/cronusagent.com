@@ -230,6 +230,7 @@
       <a class="btn solid" href="#install">Install Cronus</a>
       <a class="btn ghost" href="https://github.com/agentleadengine/cronus-agent">View on GitHub</a>
     </div>
+    <div style="margin-top:20px;font-size:13px;color:var(--dim)" id="gh-proof">Open source on GitHub</div>
     <div class="agents">
       <span class="chip"><b style="color:var(--hermes)">Η</b> Hermes · learns your skills</span>
       <span class="chip"><b style="color:var(--claude)">Κ</b> Claude · code and deep work</span>
@@ -242,6 +243,18 @@
   <div class="wrap">
     <figure class="shot"><img src="demo-chat.gif" alt="Live demo: typing a question into Cronus chat and getting an answer" loading="lazy"></figure>
     <div class="shotcap">The actual app, live: ask a question, watch Cronus think, get the answer.</div>
+  </div>
+</section>
+
+<section id="video">
+  <div class="wrap">
+    <h2>Watch the demo</h2>
+    <p class="sub">Forty-two seconds, with sound. What Cronus is and how it feels to use.</p>
+    <figure class="shot" style="max-width:860px;margin:0 auto">
+      <video controls preload="metadata" poster="demo-poster.jpg" style="display:block;width:100%;height:auto">
+        <source src="demo.mp4" type="video/mp4">
+      </video>
+    </figure>
   </div>
 </section>
 
@@ -511,6 +524,16 @@ ollama pull qwen3:4b</code><button class="copy">copy</button></pre>
   }
   document.getElementById("gate-go").addEventListener("click", tryUnlock);
   document.getElementById("gate-pass").addEventListener("keydown", e => { if (e.key === "Enter") tryUnlock(); });
+
+  // live GitHub stars - real number, fetched client-side, no tracking
+  fetch("https://api.github.com/repos/agentleadengine/cronus-agent")
+    .then(r => r.json())
+    .then(d => {
+      if (d && typeof d.stargazers_count === "number") {
+        document.getElementById("gh-proof").innerHTML =
+          '&#9733; ' + d.stargazers_count + ' on <a href="https://github.com/agentleadengine/cronus-agent" style="color:var(--muted)">GitHub</a> · MIT licensed · no account required';
+      }
+    }).catch(() => {});
 
   document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", () => {
     navigator.clipboard.writeText(b.parentElement.querySelector("code").innerText);
