@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI words, translated - Cronus Agent docs</title>
+<meta name="description" content="Tokens, models, parameters, context windows: every AI word Cronus uses, explained so a normal person can follow.">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <nav class="links">
+      <a href="index.html#install">Install</a>
+      <a href="docs.html" class="here">Docs</a>
+      <a href="https://github.com/agentleadengine/cronus-agent">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="docs.html">Docs</a> · Concepts</div>
+  <h1>AI words, translated</h1>
+  <p class="lede">The AI world loves jargon. Here is every term you will actually meet in Cronus, in plain English, with why you should care.</p>
+
+  <h2 class="first">Model</h2>
+  <p>The brain. A model is a big file of learned patterns that reads your words and predicts a useful response. Different models trade speed, smarts, and cost differently - that is why Cronus has a model picker instead of pretending one brain fits every job.</p>
+
+  <h2>Token</h2>
+  <p>The unit AI text is measured in. A token is a chunk of a word - "understanding" might be 3 tokens, "cat" is 1. Roughly, <b>one token is three quarters of a word</b>.</p>
+  <p>Why you care:</p>
+  <ul>
+    <li><b>Speed is measured in tokens per second.</b> A model that writes 40 tokens a second produces about 30 words a second. When a reply crawls, the model is generating tokens slower than you read.</li>
+    <li><b>Cloud pricing is per token</b> - you pay for words in and words out. Local models make this a non-issue: your own computer does the work, so tokens are free.</li>
+    <li><b>Limits are in tokens.</b> When a plan says "usage limit reached", it means you have spent your token allowance for the period.</li>
+  </ul>
+
+  <h2>Parameters, or what "4b" means</h2>
+  <p>A model's size. Parameters are the learned dials inside the brain - <code>qwen3:4b</code> has 4 billion of them, big cloud models have hundreds of billions or trillions. More parameters generally means smarter but slower and hungrier for memory.</p>
+  <p>Rule of thumb for your own computer: a 3-4b model runs comfortably on a normal laptop and handles everyday questions well. Bigger local models need more RAM (the Local Models page in Cronus tells you what fits your machine). The giant models only exist in the cloud.</p>
+
+  <h2>Context window</h2>
+  <p>The model's short-term attention span, also measured in tokens. Everything the model can "see" right now - your message, the conversation so far, any documents pulled in - must fit in the window. Things that fall out of the window are invisible to the model, which is exactly why <a href="hindsight.html">memory</a> exists: it saves what matters outside the window and brings it back when relevant.</p>
+
+  <h2>Local vs cloud</h2>
+  <table>
+    <tr><th></th><th>Local model</th><th>Cloud model</th></tr>
+    <tr><td>Where it runs</td><td>Your computer</td><td>Someone's data center</td></tr>
+    <tr><td>Cost</td><td>Free</td><td>Subscription or per token</td></tr>
+    <tr><td>Privacy</td><td>Nothing leaves your machine</td><td>Your words go to the provider</td></tr>
+    <tr><td>Speed and smarts</td><td>Good for everyday work</td><td>The strongest models available</td></tr>
+    <tr><td>Works offline</td><td>Yes</td><td>No</td></tr>
+  </table>
+  <p>Cronus treats both as first-class. Start free and private with local; connect a cloud plan when you want more horsepower. The model chip always shows which one you are on.</p>
+
+  <h2>Why is the first reply slow?</h2>
+  <p>A local model is a multi-gigabyte file that has to be loaded from disk into memory before it can think. That happens on the first message after a restart, and it is the single slowest moment you will see. After loading, it stays warm and replies come much faster.</p>
+
+  <h2>Thinking models</h2>
+  <p>Some newer models "think before speaking" - they write hidden reasoning to themselves before the final answer. That improves hard problems and slows down easy ones. Cronus turns thinking off for quick dashboard work, because you asked what time it is, not for a dissertation.</p>
+
+  <h2>Agent</h2>
+  <p>A model with hands. A plain model can only write text; an agent can use tools - run programs, browse, send email, read files - in a loop until a job is done. Hermes and OpenClaw are agents. Cronus is the desk they all sit at.</p>
+
+  <h2>MCP</h2>
+  <p>The plug standard. MCP (Model Context Protocol) is an open standard for connecting AI to outside tools, like USB is for devices. When you see "MCP Servers" in Cronus, that page lists which tool connections your agents can reach.</p>
+
+  <div class="nextprev">
+    <a href="hindsight.html">&larr; Memory (Hindsight)</a>
+    <a href="why.html">Next: Why use Cronus &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent · MIT licensed · <a href="https://github.com/agentleadengine/cronus-agent">github.com/agentleadengine/cronus-agent</a></div>
+</footer>
+
+</body>
+</html>

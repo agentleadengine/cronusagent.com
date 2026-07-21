@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenClaw - Cronus Agent docs</title>
+<meta name="description" content="What OpenClaw is: the agent that drives a real web browser to complete missions for you.">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <nav class="links">
+      <a href="index.html#install">Install</a>
+      <a href="docs.html" class="here">Docs</a>
+      <a href="https://github.com/agentleadengine/cronus-agent">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="docs.html">Docs</a> · The agents</div>
+  <h1 style="color:var(--openclaw)">Ω <span style="color:var(--ivory)">OpenClaw</span></h1>
+  <p class="lede">The one with hands. OpenClaw operates a real web browser: it opens pages, clicks buttons, fills forms, and reads what it sees, so websites without an API are still fair game.</p>
+
+  <h2 class="first">What it is</h2>
+  <p>Most AI tools can only talk. OpenClaw can do: give it a website and a goal ("log into the dashboard and export this month's report") and it drives the browser the way a person would, step by step, until the mission is done or it honestly cannot continue.</p>
+  <p>It is a separate program that Cronus connects to, like Hermes. Cronus gives it the same desk treatment: a red Ω chip in the dock for direct missions, routing when your request is browser-shaped, and a truthful gray dot when it is not installed.</p>
+
+  <h2>What it is good at</h2>
+  <ul>
+    <li><b>Sites without an export button</b> - old dashboards, portals, admin panels.</li>
+    <li><b>Repetitive clicking</b> - the same 14-click sequence you do every Monday.</li>
+    <li><b>Form work</b> - filling and submitting the same shapes of data again and again.</li>
+    <li><b>Look-and-report missions</b> - "check whether the listing is live and tell me what it says."</li>
+  </ul>
+
+  <h2>What to know before you send it off</h2>
+  <ul>
+    <li><b>Missions take minutes, not seconds.</b> A browser mission means real page loads and real clicking. Watch its window stream if you want to see it work.</li>
+    <li><b>Be specific.</b> "Go to the billing page and download the June invoice" beats "handle my invoices". The tighter the goal, the better the run.</li>
+    <li><b>It can fail honestly.</b> Captchas, logins it does not have, and redesigned pages can stop a mission. It reports what happened instead of pretending.</li>
+  </ul>
+  <div class="why">
+    <div class="t">Why not just use an API?</div>
+    <p>When an API exists, an API is better - faster and more reliable. OpenClaw exists for everything else, which in the real world is most of the web. The browser is the universal adapter.</p>
+  </div>
+
+  <h2>Do I need it?</h2>
+  <p>No. Like every agent, OpenClaw is optional. Without it, Cronus simply never routes browser missions and the dock says so plainly.</p>
+
+  <div class="nextprev">
+    <a href="hermes.html">&larr; Hermes</a>
+    <a href="hindsight.html">Next: Memory (Hindsight) &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent · MIT licensed · <a href="https://github.com/agentleadengine/cronus-agent">github.com/agentleadengine/cronus-agent</a></div>
+</footer>
+
+</body>
+</html>

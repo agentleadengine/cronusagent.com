@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Memory (Hindsight) - Cronus Agent docs</title>
+<meta name="description" content="How agent memory works in plain words: what Hindsight is, what gets remembered, and why it lives on your machine.">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <nav class="links">
+      <a href="index.html#install">Install</a>
+      <a href="docs.html" class="here">Docs</a>
+      <a href="https://github.com/agentleadengine/cronus-agent">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="docs.html">Docs</a> · Concepts</div>
+  <h1>Memory, aka Hindsight</h1>
+  <p class="lede">Out of the box, AI models forget you the moment a conversation ends. Hindsight is the fix: a memory system that runs on your computer and lets agents actually remember.</p>
+
+  <h2 class="first">The problem it solves</h2>
+  <p>A model has no memory of its own. Every conversation starts from zero: it does not know your business, what worked last week, or what you told it yesterday. That is fine for one-off questions and terrible for an assistant you work with every day.</p>
+
+  <h2>How it works, in plain words</h2>
+  <p>Hindsight is a small service that runs quietly on your machine. Agents connected to it get two abilities:</p>
+  <ul>
+    <li><b>Retain</b> - after working with you, the agent saves what mattered: facts, outcomes, preferences, lessons. Not a transcript of everything, a distillation of the useful parts.</li>
+    <li><b>Recall</b> - next time you ask for something, the agent first checks its memory for anything relevant and brings it into the conversation. That is why the tenth cold-email campaign is better than the first.</li>
+  </ul>
+  <p>Memories live in <b>banks</b> - separate shelves for separate agents. Hermes has its own bank, so its outreach lessons do not leak into unrelated work, and other agents can have theirs. There are also <b>knowledge pages</b>: longer reference notes an agent can keep, like a playbook it wrote for itself.</p>
+
+  <h2>What this looks like in practice</h2>
+  <ul>
+    <li>You tell Hermes once that replies should never use hype words. It remembers, permanently.</li>
+    <li>An agent figures out the fix for a fiddly recurring task. Next month it does not have to figure it out again.</li>
+    <li>You ask "what did we learn from the last campaign?" and the answer comes from actual saved lessons, not vibes.</li>
+  </ul>
+
+  <div class="why">
+    <div class="t">Why memory on your machine matters</div>
+    <p>An assistant's memory is the most personal data there is: your habits, your clients, your plans. Hindsight runs locally, so that record belongs to you. Unplug it and the memory is simply yours, sitting in a folder, not training someone else's product.</p>
+  </div>
+
+  <h2>Do I need it?</h2>
+  <p>No - Cronus and its agents work without it, they just start every conversation fresh. The setup wizard's health check shows whether Hindsight is running. With it, agents compound: they get better at your work the longer they do it. That compounding is the entire point.</p>
+
+  <div class="nextprev">
+    <a href="openclaw.html">&larr; OpenClaw</a>
+    <a href="ai-basics.html">Next: AI words, translated &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent · MIT licensed · <a href="https://github.com/agentleadengine/cronus-agent">github.com/agentleadengine/cronus-agent</a></div>
+</footer>
+
+</body>
+</html>

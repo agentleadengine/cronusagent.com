@@ -4,74 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Docs - Cronus Agent</title>
-<meta name="description" content="Plain-language docs for Cronus Agent: how to use it, how the pieces fit, and why it works the way it does.">
+<meta name="description" content="Plain-language docs for Cronus Agent: getting started, the agents, memory, and every AI word translated.">
 <link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --ink: #0a0a09; --panel: #141412; --line: #2a2a26; --ivory: #f5f2ea;
-    --muted: #9b968a; --dim: #6b675e;
-    --hermes: #06b6d4; --claude: #f97316; --openclaw: #ef4444;
-    --serif: "Cormorant Garamond", Georgia, serif;
-    --sans: -apple-system, "Segoe UI", system-ui, sans-serif;
-    --mono: "SF Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
-  }
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--ink); color: var(--ivory); font: 16px/1.7 var(--sans); -webkit-font-smoothing: antialiased; }
-  ::selection { background: var(--ivory); color: var(--ink); }
-  a { color: inherit; }
-
-  header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--ink) 86%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
-  .nav { display: flex; align-items: center; gap: 14px; padding: 14px 24px; max-width: 1100px; margin: 0 auto; }
-  .nav img { width: 28px; height: 28px; border-radius: 7px; }
-  .nav .name { font: 600 20px var(--serif); }
-  .nav .name a { text-decoration: none; }
-  .nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 13.5px; color: var(--muted); }
-  .nav .links a { text-decoration: none; transition: color .15s; }
-  .nav .links a:hover, .nav .links a.here { color: var(--ivory); }
-
-  .layout { max-width: 1100px; margin: 0 auto; padding: 48px 24px 90px; display: grid; grid-template-columns: 220px 1fr; gap: 48px; }
-  @media (max-width: 800px) { .layout { grid-template-columns: 1fr; } .toc { position: static !important; display: flex; flex-wrap: wrap; gap: 4px 16px; border: none !important; padding: 0 !important; } }
-
-  .toc { position: sticky; top: 84px; align-self: start; border-left: 1px solid var(--line); padding-left: 18px; font-size: 13.5px; }
-  .toc a { display: block; color: var(--muted); text-decoration: none; padding: 4px 0; }
-  .toc a:hover { color: var(--ivory); }
-  .toc .g { font: 500 11px var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--dim); margin: 18px 0 4px; }
-  .toc .g:first-child { margin-top: 0; }
-
-  h1 { font: italic 500 clamp(38px, 5vw, 54px)/1.1 var(--serif); margin-bottom: 10px; }
-  .lede { font: italic 400 19px/1.55 "Newsreader", var(--serif); color: var(--muted); max-width: 58ch; margin-bottom: 40px; }
-  h2 { font: italic 500 30px/1.2 var(--serif); margin: 56px 0 6px; padding-top: 18px; border-top: 1px solid var(--line); }
-  h2:first-of-type { border-top: none; margin-top: 8px; padding-top: 0; }
-  h3 { font: 600 16.5px var(--sans); margin: 28px 0 6px; }
-  p { color: var(--muted); max-width: 68ch; margin-bottom: 12px; }
-  p b, li b { color: var(--ivory); font-weight: 600; }
-  ul, ol { color: var(--muted); max-width: 66ch; margin: 0 0 12px 22px; }
-  li { margin-bottom: 6px; }
-  code { font: 13px var(--mono); background: #050505; border: 1px solid var(--line); border-radius: 6px; padding: 2px 7px; color: var(--ivory); }
-  pre { background: #050505; border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; overflow-x: auto; margin: 10px 0 16px; max-width: 68ch; }
-  pre code { border: none; padding: 0; background: none; line-height: 1.7; }
-
-  .why { border: 1px solid var(--line); border-left: 3px solid var(--ivory); border-radius: 10px; padding: 14px 18px; margin: 14px 0 20px; max-width: 68ch; background: var(--panel); }
-  .why .t { font: italic 600 15px var(--serif); margin-bottom: 4px; }
-  .why p { font-size: 14px; margin-bottom: 0; }
-
-  .agentrow { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0 6px; }
-  .chip { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 13px; color: var(--muted); background: var(--panel); }
-  .chip b { font: 700 15px var(--serif); }
-
-  table { border-collapse: collapse; font-size: 14px; margin: 10px 0 18px; max-width: 68ch; width: 100%; }
-  th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
-  th { color: var(--ivory); font-weight: 600; background: var(--panel); }
-  td { color: var(--muted); }
-
-  footer { border-top: 1px solid var(--line); padding: 32px 24px 60px; color: var(--dim); font-size: 13px; }
-  footer .wrap { max-width: 1100px; margin: 0 auto; }
-  footer a { color: var(--muted); }
-</style>
+<link rel="stylesheet" href="docs.css">
 </head>
 <body>
 
@@ -88,128 +26,75 @@
   </div>
 </header>
 
-<div class="layout">
-  <nav class="toc">
-    <div class="g">Start here</div>
-    <a href="#idea">The idea in one minute</a>
-    <a href="#first-run">Your first five minutes</a>
-    <div class="g">How to</div>
-    <a href="#chat">Talk to Cronus</a>
-    <a href="#agents">Talk to one agent directly</a>
-    <a href="#models">Pick your model</a>
-    <a href="#pages">The other pages</a>
-    <a href="#style">Change how it looks</a>
-    <div class="g">The whys</div>
-    <a href="#why-local">Why local-first</a>
-    <a href="#why-free">Why a free model by default</a>
-    <a href="#why-honest">Why so many gray dots</a>
-    <div class="g">Help</div>
-    <a href="#faq">Common questions</a>
-  </nav>
+<main class="page">
+  <h1>Docs</h1>
+  <p class="lede">Everything here is written for a person, not a developer. If a sentence needs a computer science degree, that is a bug - tell us on GitHub.</p>
 
-  <main>
-    <h1>Docs</h1>
-    <p class="lede">Everything here is written for a person, not a developer. If a sentence needs a computer science degree, that is a bug - tell us on GitHub.</p>
+  <h2 class="first">The idea in one minute</h2>
+  <p>You probably use more than one AI tool. Each lives in its own tab, terminal, or app, and none of them know about each other. Cronus puts them on one desk. Two ways to work:</p>
+  <ul>
+    <li><b>Ask Cronus.</b> Type anything into the main chat. Cronus answers small things itself, and for real work it picks the agent whose skills fit and hands the job over, telling you which one it chose.</li>
+    <li><b>Go direct.</b> The dock at the bottom right shows every agent. Click one and it opens as its own window - no routing, live output.</li>
+  </ul>
+  <p>Everything runs on your computer. Nothing leaves your machine unless you connect a cloud model on purpose.</p>
 
-    <h2 id="idea">The idea in one minute</h2>
-    <p>You probably use more than one AI tool. Each lives in its own tab, terminal, or app, and none of them know about each other. Cronus puts them on one desk.</p>
-    <p>There are two ways to work:</p>
-    <ul>
-      <li><b>Ask Cronus.</b> Type anything into the main chat. Cronus answers small things itself, and for real work it picks the agent whose skills fit and hands the job over - telling you which one it chose and why.</li>
-      <li><b>Go direct.</b> The dock at the bottom right shows every agent. Click one and it opens as its own window. What you type there goes straight to that agent, no routing, and you watch its output live.</li>
-    </ul>
-    <div class="agentrow">
-      <span class="chip"><b style="color:var(--hermes)">Η</b> Hermes - automation, email, outreach</span>
-      <span class="chip"><b style="color:var(--claude)">Κ</b> Claude - code and deep work</span>
-      <span class="chip"><b style="color:var(--openclaw)">Ω</b> OpenClaw - browser missions</span>
-    </div>
-    <p>Everything runs on your computer. The dashboard is a local page only you can reach, and your files, credentials, and chat history never leave your machine unless you connect a cloud model on purpose.</p>
+  <h2>Go deeper</h2>
+  <div class="cards">
+    <a class="card" href="hermes.html">
+      <span class="sig" style="color:var(--hermes)">Η</span>
+      <h3>Hermes</h3>
+      <p>The doer: email, outreach, and multi-step routines, with tools and memory of its own.</p>
+    </a>
+    <a class="card" href="openclaw.html">
+      <span class="sig" style="color:var(--openclaw)">Ω</span>
+      <h3>OpenClaw</h3>
+      <p>The one with hands: drives a real web browser to complete missions on any site.</p>
+    </a>
+    <a class="card" href="hindsight.html">
+      <span class="sig">◎</span>
+      <h3>Memory (Hindsight)</h3>
+      <p>Why your agents remember you next week, and why that memory lives on your machine.</p>
+    </a>
+    <a class="card" href="ai-basics.html">
+      <span class="sig">Aa</span>
+      <h3>AI words, translated</h3>
+      <p>Tokens, parameters, context windows, local vs cloud - every term, in plain English.</p>
+    </a>
+    <a class="card" href="why.html">
+      <span class="sig">?</span>
+      <h3>Why use Cronus</h3>
+      <p>The honest case, the deliberate trade-offs, and who this is NOT for.</p>
+    </a>
+  </div>
 
-    <h2 id="first-run">Your first five minutes</h2>
-    <ol>
-      <li><b>Install and start it</b> (see <a href="index.html#install">Install</a>). The dashboard opens at <code>localhost:8787/cronus</code>, or in its own window if you use the desktop app.</li>
-      <li><b>Meet the setup wizard.</b> On a fresh machine Cronus opens Setup first. It health-checks your computer: green dot means working, gray dot means not connected yet. Gray is normal on a new machine - every gray row includes a fix hint in plain words.</li>
-      <li><b>Connect one brain.</b> Chat needs at least one AI model. The free path: install <a href="https://ollama.com">Ollama</a> and run <code>ollama pull qwen3:4b</code>. Cronus spots it automatically and lists it as "local, free".</li>
-      <li><b>Say something.</b> Go to the chat and ask "what can you do?". The first reply on a local model is slow while the model loads into memory. After that it gets quicker.</li>
-    </ol>
+  <h2>Your first five minutes</h2>
+  <ol>
+    <li><b>Install and start it</b> (see <a href="index.html#install">Install</a>). The dashboard opens at <code>localhost:8787/cronus</code>, or in its own window if you use the desktop app.</li>
+    <li><b>Meet the setup wizard.</b> It health-checks your machine: green means working, gray means not connected yet. Gray is normal on a new computer, and every gray row includes a fix hint in plain words.</li>
+    <li><b>Connect one brain.</b> Chat needs at least one AI model. The free path: install <a href="https://ollama.com">Ollama</a>, then run <code>ollama pull qwen3:4b</code>. Cronus lists it as "local, free" automatically.</li>
+    <li><b>Say something.</b> Ask "what can you do?". The first reply on a local model is slow while the model loads - after that it gets quicker. (<a href="ai-basics.html">Why?</a>)</li>
+  </ol>
 
-    <h2 id="chat">How to: talk to Cronus</h2>
-    <p>The main chat (called Oracle in the sidebar) is the front door. Cronus reads your message and does one of four things:</p>
-    <ul>
-      <li><b>Answers directly</b> - small talk, questions about your setup, things it already knows.</li>
-      <li><b>Delegates</b> - picks ONE agent, hands the job over as a background task, and reports back. You can watch the run in the Log.</li>
-      <li><b>Asks one question</b> - only when your request genuinely has two readings and guessing would waste your time.</li>
-      <li><b>Handles your to-dos</b> - if you connected TickTick, "what's due today" or "add a task" works right in chat.</li>
-    </ul>
-    <p>The model chip in the top bar shows which brain Cronus is using for its own thinking. Click it to switch.</p>
+  <h2>How to</h2>
+  <h3>Talk to Cronus</h3>
+  <p>The main chat (Oracle) reads your message and either answers, hands the job to ONE agent as a background task, asks a single clarifying question, or handles your TickTick to-dos. The model chip in the top bar shows which brain it is using - click it to switch.</p>
+  <h3>Talk to one agent directly</h3>
+  <p>Click an agent's chip in the dock. Its window opens with its own saved conversation, drags by the title bar, and streams the agent's raw output live. Green dot means installed; gray means not on this machine.</p>
+  <h3>Pick your model</h3>
+  <p>"Local, free" models run on your own computer through Ollama - private, offline, no cost. Claude models need your Claude plan sign-in and are faster and sharper. Cronus falls back gracefully and tells you what happened when a model is unreachable. The Local Models page downloads new local models and shows what fits your memory.</p>
+  <h3>Change how it looks</h3>
+  <p>The style button in the top bar reskins the whole app: font pack, accent color, sharpness, density, glow. Your desk, your look.</p>
 
-    <h2 id="agents">How to: talk to one agent directly</h2>
-    <p>Click an agent's chip in the dock (bottom right). Its window opens with its own conversation. This is a direct line: Cronus does not route, rewrite, or supervise anything you type there.</p>
-    <ul>
-      <li>Windows drag by the title bar, stack, and remember their conversation even after you close them.</li>
-      <li>While the agent works, its raw output streams into the window live - useful for watching long jobs.</li>
-      <li>A green dot on the chip means the agent's software is installed on this machine. Gray means it is not - the window will tell you what is missing rather than pretending.</li>
-    </ul>
-    <div class="why">
-      <div class="t">Why both a router and direct lines?</div>
-      <p>Sometimes you do not care who does the job - that is what asking Cronus is for. Sometimes you know exactly which agent you want and the middleman is friction. Both are first-class, and neither locks you out of the other.</p>
-    </div>
-
-    <h2 id="models">How to: pick your model</h2>
-    <p>The Model menu in the top bar lists every brain Cronus can find, in three flavors:</p>
-    <table>
-      <tr><th>Flavor</th><th>What it means</th><th>Cost</th></tr>
-      <tr><td>local, free</td><td>A model running on your own computer through Ollama. Private, works offline.</td><td>Free forever</td></tr>
-      <tr><td>Claude plan</td><td>Anthropic's models through your Claude subscription, once you sign in.</td><td>Your existing plan</td></tr>
-      <tr><td>cloud</td><td>Models billed through other accounts you have connected.</td><td>Depends on the account</td></tr>
-    </table>
-    <p>Rule of thumb: local models are private and free but slower and simpler. Claude models are fast and sharp but need a subscription. Cronus falls back gracefully - if your chosen model is unreachable, it tries the next sane option and tells you what happened.</p>
-    <p>Want another local model? The Local Models page lets you download one by name (like <code>llama3.2:3b</code>) and shows what fits in your computer's memory.</p>
-
-    <h2 id="pages">The other pages, in one line each</h2>
-    <ul>
-      <li><b>Loom</b> - have Cronus summarize a past conversation and hand the context to another agent.</li>
-      <li><b>Tasks</b> - your TickTick to-dos, due and overdue, editable in place.</li>
-      <li><b>Automations</b> - describe a routine in plain words, get a draft workflow.</li>
-      <li><b>Browser Agent</b> - give it a site and a goal, it clicks through the page for you.</li>
-      <li><b>Leads</b> - paste messy lead notes, get a ranked call-first list with talking points.</li>
-      <li><b>Scheduled Runs</b> - jobs on a timer, like a morning inbox summary.</li>
-      <li><b>Documents and Knowledge</b> - drop files or folders in, then ask questions about what is inside.</li>
-      <li><b>Doc Extract</b> - turn a scanned invoice or messy PDF into clean structured facts.</li>
-      <li><b>Add a Tool, Plugins, MCP Servers</b> - connect outside tools and see what is on and reachable.</li>
-      <li><b>Credentials</b> - saved keys, encrypted; once saved, the value is never shown again.</li>
-      <li><b>Activity, Daily Brief, Tool Health</b> - what is running, what needs you, what is down.</li>
-    </ul>
-
-    <h2 id="style">How to: change how it looks</h2>
-    <p>The style button in the top bar changes the entire app: font pack, accent color, corner sharpness, spacing density, glow. Pick, save, done. It is your desk - set it how you like it.</p>
-
-    <h2 id="why-local">Why local-first</h2>
-    <p>Cronus runs on your machine and answers only to you. There is no Cronus cloud, no account to create, no telemetry phoning home, and the app never updates itself behind your back - new versions are installers you choose to install.</p>
-    <div class="why">
-      <div class="t">The trade we chose</div>
-      <p>Cloud apps are easier to ship and easier to bill. But an orchestrator sees everything - your tasks, your leads, your documents, your keys. We think that thing should live where you can unplug it.</p>
-    </div>
-
-    <h2 id="why-free">Why a free model by default</h2>
-    <p>You should not need a credit card to find out whether Cronus is useful. A small local model is genuinely enough for routing, summaries, and everyday questions. When you want more horsepower, connecting your Claude plan is one sign-in, and Cronus will use it without ceremony.</p>
-
-    <h2 id="why-honest">Why so many gray dots</h2>
-    <p>On a fresh machine, most integrations show gray "not connected yet" states. That is on purpose. Cronus never fakes a connection, never hides a failure behind a spinner, and every error tries to tell you the next step in plain words. Software that pretends everything is fine is software you cannot trust with real work.</p>
-
-    <h2 id="faq">Common questions</h2>
-    <h3>Chat is slow.</h3>
-    <p>You are probably on a small local model - the first reply after a restart also loads the model into memory, which is the slowest moment. Options: keep chatting (it warms up), pull a smaller model, or sign in to a Claude plan for fast replies.</p>
-    <h3>An agent's chip has a gray dot.</h3>
-    <p>That agent's software is not installed on this machine. Cronus works fine with whatever subset you have - the dock just tells you the truth about what is present.</p>
-    <h3>My antivirus flagged the installer.</h3>
-    <p>The prebuilt installers are not yet code-signed, and antivirus tools distrust unsigned new programs on principle. The code is open source and reviewable. Installing from source avoids the warnings entirely; signing is on the roadmap.</p>
-    <h3>Where is my data?</h3>
-    <p>In your home folder: app state lives in <code>~/artemis</code>, and background job logs in <code>~/.cache/prompt-studio-jobs</code>. Delete those and the repo folder, and Cronus is fully gone.</p>
-    <h3>Something broke. Where do I look?</h3>
-    <p>Open Setup and run the health check - it says what is working and how to fix what is not, row by row. Still stuck? Open an issue on <a href="https://github.com/agentleadengine/cronus-agent/issues">GitHub</a> and paste what the health check said.</p>
-  </main>
-</div>
+  <h2>Common questions</h2>
+  <h3>Chat is slow.</h3>
+  <p>You are probably on a small local model, and the first reply after a restart also loads the model into memory. Keep chatting (it warms up), pull a smaller model, or sign in to a Claude plan for fast replies.</p>
+  <h3>My antivirus flagged the installer.</h3>
+  <p>The prebuilt installers are not yet code-signed, and antivirus tools distrust unsigned new programs on principle. The code is open source and reviewable. Installing from source avoids the warnings; signing is on the roadmap.</p>
+  <h3>Where is my data?</h3>
+  <p>In your home folder: app state in <code>~/artemis</code>, background job logs in <code>~/.cache/prompt-studio-jobs</code>. Delete those and the app folder, and Cronus is fully gone.</p>
+  <h3>Something broke. Where do I look?</h3>
+  <p>Open Setup and run the health check - it says what is working and how to fix what is not, row by row. Still stuck? Open an issue on <a href="https://github.com/agentleadengine/cronus-agent/issues">GitHub</a> and paste what the health check said.</p>
+</main>
 
 <footer>
   <div class="wrap">Cronus Agent · MIT licensed · <a href="https://github.com/agentleadengine/cronus-agent">github.com/agentleadengine/cronus-agent</a></div>
