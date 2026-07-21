@@ -180,6 +180,19 @@
   .learn .lt { font: 600 14.5px var(--sans); margin-bottom: 4px; }
   .learn p { font-size: 13px; color: var(--muted); margin: 0; }
 
+  /* alpha gate */
+  .gate { max-width: 460px; margin: 0 auto; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; padding: 34px 30px; text-align: center; }
+  .gate .gk { font: 600 11px var(--mono); letter-spacing: .3em; text-transform: uppercase; color: var(--claude); margin-bottom: 14px; }
+  .gate p { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
+  .gate .row { display: flex; gap: 8px; }
+  .gate input { flex: 1; background: #050505; border: 1px solid var(--line); border-radius: 9px; color: var(--ivory); font: 14px var(--sans); padding: 11px 14px; }
+  .gate input:focus { outline: none; border-color: var(--muted); }
+  .gate button { background: var(--ivory); color: var(--ink); border: none; border-radius: 9px; font: 600 14px var(--sans); padding: 0 18px; cursor: pointer; }
+  .gate .err { color: var(--openclaw); font-size: 12.5px; margin-top: 10px; min-height: 16px; margin-bottom: 0; }
+  #install-content { display: none; }
+  #install-content.open { display: block; }
+  #gate-box.hidden { display: none; }
+
   footer { border-top: 1px solid var(--line); padding: 36px 0 60px; color: var(--dim); font-size: 13px; }
   footer a { color: var(--muted); }
   @media (max-width: 640px) { .hero { padding-top: 64px; } section { padding: 52px 0; } }
@@ -327,6 +340,16 @@
     <h2>Install</h2>
     <p class="sub">Two minutes from zero to the dashboard. You need git and Python 3.11 or newer; everything else installs itself on first run.</p>
 
+    <div class="gate" id="gate-box">
+      <div class="gk">Alpha Release</div>
+      <p>Cronus is in early alpha. Installation is open to alpha testers only for now - enter your access code to see the install steps.</p>
+      <div class="row">
+        <input type="password" id="gate-pass" placeholder="Access code" autocomplete="off">
+        <button id="gate-go">Unlock</button>
+      </div>
+      <p class="err" id="gate-err"></p>
+    </div>
+    <div id="install-content">
     <div class="tabs">
       <button class="tab on" data-os="mac">macOS</button>
       <button class="tab" data-os="win">Windows</button>
@@ -398,6 +421,7 @@ ollama pull qwen3:4b</code><button class="copy">copy</button></pre>
 
     <div class="note"><b>Honest note about installers:</b> prebuilt installers are currently unsigned, so Windows SmartScreen and some antivirus tools will warn or quarantine until you allow them. That is a signing-certificate formality, not a judgment of the code, which is fully open source and reviewable on GitHub. Installing from source (step 1) avoids the warnings entirely. Code signing is on the roadmap.</div>
   </div>
+  </div>
 </section>
 
 <section id="learn">
@@ -429,6 +453,30 @@ ollama pull qwen3:4b</code><button class="copy">copy</button></pre>
     t.classList.add("on");
     document.getElementById("os-" + t.dataset.os).classList.add("on");
   }));
+  // alpha gate: compares a SHA-256 hash, remembers an unlock in this browser
+  const GATE_HASH = "4b79c420d7b12773d2473b6a4b1f585164fa88c8361c3c144e18eacd501f7d88";
+  async function sha256(s) {
+    const b = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+    return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2, "0")).join("");
+  }
+  function unlockInstall() {
+    document.getElementById("install-content").classList.add("open");
+    document.getElementById("gate-box").classList.add("hidden");
+  }
+  if (localStorage.getItem("cronus-alpha") === "1") unlockInstall();
+  async function tryUnlock() {
+    const v = document.getElementById("gate-pass").value.trim();
+    if (!v) return;
+    if (await sha256(v) === GATE_HASH) {
+      localStorage.setItem("cronus-alpha", "1");
+      unlockInstall();
+    } else {
+      document.getElementById("gate-err").textContent = "That code is not right. Ask us for alpha access on GitHub.";
+    }
+  }
+  document.getElementById("gate-go").addEventListener("click", tryUnlock);
+  document.getElementById("gate-pass").addEventListener("keydown", e => { if (e.key === "Enter") tryUnlock(); });
+
   document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", () => {
     navigator.clipboard.writeText(b.parentElement.querySelector("code").innerText);
     b.textContent = "copied";
