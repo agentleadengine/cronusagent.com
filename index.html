@@ -153,6 +153,14 @@
   .ask .a { font-size: 13px; color: var(--muted); }
   .ask .a b { font-weight: 700; }
 
+  /* memory feed */
+  .memfeed { max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; }
+  .mem { background: var(--panel); border: 1px solid var(--line); border-left: 3px solid var(--muted); border-radius: 10px; padding: 13px 17px; text-align: left; }
+  .mem .m { font-size: 14.5px; color: var(--ivory); margin-bottom: 5px; }
+  .mem .meta { font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--dim); }
+  .memnote { text-align: center; margin-top: 22px; font-size: 14px; color: var(--muted); }
+  .memnote a { color: var(--ivory); }
+
   /* learn-more cards */
   .learn { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
   .learn a { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; text-decoration: none; transition: border-color .15s, transform .12s; }
@@ -233,6 +241,20 @@
       <figure class="shot"><img src="demo-windows.gif" alt="Live demo: opening Hermes and OpenClaw as their own windows from the dock and typing a mission" loading="lazy"></figure>
       <div class="shotcap">Skip the routing whenever you want: click agents in the dock, each opens as its own window, and type straight to them.</div>
     </div>
+  </div>
+</section>
+
+<section id="memory">
+  <div class="wrap">
+    <h2>It remembers you</h2>
+    <p class="sub">Most AI forgets you the moment a chat ends. With memory connected, your agents keep what matters - and it lives on your machine, not in someone's cloud. Real memories look like this:</p>
+    <div class="memfeed">
+      <div class="mem"><div class="m">Replies should sound plain. No hype words, no exclamation marks.</div><div class="meta">remembered 3 weeks ago · applied to every draft since</div></div>
+      <div class="mem"><div class="m">The weekly report goes out Monday at 8am, always with the CSV attached.</div><div class="meta">remembered last month · the scheduled run follows it</div></div>
+      <div class="mem"><div class="m">Acme's decision maker prefers calls after 2pm.</div><div class="meta">remembered 12 days ago · surfaced while ranking leads</div></div>
+      <div class="mem"><div class="m">The follow-up that got replies led with the question, not the pitch.</div><div class="meta">remembered 6 days ago · a lesson, not a setting - it learned this</div></div>
+    </div>
+    <p class="memnote">Powered by Hindsight, a memory system that runs locally. Agents save the lesson, recall it when it matters, and get better at your work every week. <a href="hindsight.html">How memory works &rarr;</a></p>
   </div>
 </section>
 
