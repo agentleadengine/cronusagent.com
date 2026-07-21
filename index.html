@@ -8,7 +8,7 @@
 <link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500;1,600&family=Newsreader:ital,opsz,wght@1,6..72,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
     --ink: #0a0a09;
@@ -20,8 +20,8 @@
     --hermes: #06b6d4;
     --claude: #f97316;
     --openclaw: #ef4444;
-    --serif: "Cormorant Garamond", Georgia, serif;
-    --sans: -apple-system, "Segoe UI", system-ui, sans-serif;
+    --serif: "Inter", -apple-system, system-ui, sans-serif;
+    --sans: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
     --mono: "SF Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -44,7 +44,7 @@
   }
   .nav { display: flex; align-items: center; gap: 14px; padding: 14px 24px; max-width: 960px; margin: 0 auto; }
   .nav img { width: 28px; height: 28px; border-radius: 7px; }
-  .nav .name { font: 600 20px var(--serif); letter-spacing: .01em; }
+  .nav .name { font: 700 16.5px var(--sans); letter-spacing: -.01em; }
   .nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 13.5px; color: var(--muted); }
   .nav .links a { text-decoration: none; transition: color .15s; }
   .nav .links a:hover { color: var(--ivory); }
@@ -53,7 +53,7 @@
   .hero { position: relative; padding: 96px 0 72px; overflow: hidden; }
   .hero::after {
     content: "Cronus"; position: absolute; right: -2%; bottom: -38px;
-    font: italic 600 clamp(160px, 26vw, 300px)/1 var(--serif);
+    font: 800 clamp(140px, 24vw, 280px)/1 var(--sans); letter-spacing: -.05em;
     color: var(--ivory); opacity: .035; pointer-events: none; user-select: none;
   }
   .kicker {
@@ -61,11 +61,11 @@
     color: var(--dim); margin-bottom: 22px;
   }
   h1 {
-    font: italic 500 clamp(44px, 7vw, 76px)/1.05 var(--serif);
-    letter-spacing: -.01em; max-width: 15ch;
+    font: 800 clamp(40px, 6.2vw, 68px)/1.06 var(--sans);
+    letter-spacing: -.035em; max-width: 17ch;
   }
   .hero p.lede {
-    font: italic 400 clamp(18px, 2.4vw, 22px)/1.5 "Newsreader", var(--serif);
+    font: 400 clamp(16.5px, 2vw, 19px)/1.6 var(--sans);
     color: var(--muted); max-width: 52ch; margin: 26px 0 38px;
   }
   .cta { display: flex; gap: 14px; flex-wrap: wrap; }
@@ -85,11 +85,11 @@
     border: 1px solid var(--line); border-radius: 999px;
     padding: 9px 16px; font-size: 13.5px; color: var(--muted); background: var(--panel);
   }
-  .chip b { font: 700 15px var(--serif); }
+  .chip b { font: 700 15px var(--sans); }
 
   /* sections */
   section { padding: 72px 0; border-top: 1px solid var(--line); }
-  h2 { font: italic 500 clamp(28px, 4vw, 38px)/1.2 var(--serif); margin-bottom: 14px; }
+  h2 { font: 700 clamp(24px, 3.2vw, 32px)/1.2 var(--sans); letter-spacing: -.025em; margin-bottom: 14px; }
   .sub { color: var(--muted); max-width: 60ch; margin-bottom: 36px; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
@@ -110,7 +110,7 @@
   .step .n {
     flex-shrink: 0; width: 30px; height: 30px; border: 1px solid var(--line);
     border-radius: 50%; display: grid; place-items: center;
-    font: 600 14px var(--serif); color: var(--muted); margin-top: 2px;
+    font: 600 13px var(--sans); color: var(--muted); margin-top: 2px;
   }
   .step h4 { font: 600 15px var(--sans); margin-bottom: 5px; }
   .step p { font-size: 14px; color: var(--muted); margin-bottom: 8px; max-width: 62ch; }
@@ -141,7 +141,7 @@
   /* how it works */
   .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
   .stepcard { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
-  .stepcard .n { font: italic 600 30px var(--serif); color: var(--dim); display: block; margin-bottom: 8px; }
+  .stepcard .n { font: 800 26px var(--sans); letter-spacing: -.03em; color: var(--dim); display: block; margin-bottom: 8px; }
   .stepcard h3 { font: 600 16px var(--sans); margin-bottom: 7px; }
   .stepcard p { font-size: 14px; color: var(--muted); margin: 0; }
   .stepcard code { font: 12px var(--mono); background: #050505; border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
@@ -149,7 +149,7 @@
   /* example asks */
   .asks { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
   .ask { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
-  .ask .q { font: italic 500 16.5px "Newsreader", var(--serif); color: var(--ivory); margin-bottom: 8px; }
+  .ask .q { font: 600 15px/1.45 var(--sans); letter-spacing: -.01em; color: var(--ivory); margin-bottom: 8px; }
   .ask .a { font-size: 13px; color: var(--muted); }
   .ask .a b { font-weight: 700; }
 

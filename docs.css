@@ -3,8 +3,8 @@
   --ink: #0a0a09; --panel: #141412; --line: #2a2a26; --ivory: #f5f2ea;
   --muted: #9b968a; --dim: #6b675e;
   --hermes: #06b6d4; --claude: #f97316; --openclaw: #ef4444;
-  --serif: "Cormorant Garamond", Georgia, serif;
-  --sans: -apple-system, "Segoe UI", system-ui, sans-serif;
+  --serif: "Inter", -apple-system, system-ui, sans-serif;
+  --sans: "Inter", -apple-system, "Segoe UI", system-ui, sans-serif;
   --mono: "SF Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -16,7 +16,7 @@ a { color: inherit; }
 header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--ink) 86%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .nav { display: flex; align-items: center; gap: 14px; padding: 14px 24px; max-width: 1100px; margin: 0 auto; }
 .nav img { width: 28px; height: 28px; border-radius: 7px; }
-.nav .name { font: 600 20px var(--serif); }
+.nav .name { font: 700 16.5px var(--sans); letter-spacing: -.01em; }
 .nav .name a { text-decoration: none; }
 .nav .links { margin-left: auto; display: flex; gap: 22px; font-size: 13.5px; color: var(--muted); }
 .nav .links a { text-decoration: none; transition: color .15s; }
@@ -26,9 +26,9 @@ header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, v
 .crumb { font: 500 12px var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--dim); margin-bottom: 18px; }
 .crumb a { color: var(--dim); text-decoration: none; }
 .crumb a:hover { color: var(--ivory); }
-h1 { font: italic 500 clamp(38px, 5vw, 54px)/1.1 var(--serif); margin-bottom: 10px; }
-.lede { font: italic 400 19px/1.55 "Newsreader", var(--serif); color: var(--muted); max-width: 58ch; margin-bottom: 40px; }
-h2 { font: italic 500 29px/1.2 var(--serif); margin: 52px 0 8px; padding-top: 20px; border-top: 1px solid var(--line); }
+h1 { font: 800 clamp(32px, 4.4vw, 44px)/1.12 var(--sans); letter-spacing: -.03em; margin-bottom: 10px; }
+.lede { font: 400 17px/1.65 var(--sans); color: var(--muted); max-width: 58ch; margin-bottom: 40px; }
+h2 { font: 700 22px/1.25 var(--sans); letter-spacing: -.02em; margin: 52px 0 8px; padding-top: 20px; border-top: 1px solid var(--line); }
 h2.first { border-top: none; margin-top: 6px; padding-top: 0; }
 h3 { font: 600 16.5px var(--sans); margin: 26px 0 6px; }
 p { color: var(--muted); max-width: 68ch; margin-bottom: 12px; }
@@ -40,12 +40,12 @@ pre { background: #050505; border: 1px solid var(--line); border-radius: 10px; p
 pre code { border: none; padding: 0; background: none; line-height: 1.7; }
 
 .why { border: 1px solid var(--line); border-left: 3px solid var(--ivory); border-radius: 10px; padding: 14px 18px; margin: 14px 0 20px; max-width: 68ch; background: var(--panel); }
-.why .t { font: italic 600 15px var(--serif); margin-bottom: 4px; color: var(--ivory); }
+.why .t { font: 600 14px var(--sans); margin-bottom: 4px; color: var(--ivory); }
 .why p { font-size: 14px; margin-bottom: 0; }
 
 .chiprow { display: flex; gap: 10px; flex-wrap: wrap; margin: 12px 0 6px; }
 .chip { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); border-radius: 999px; padding: 7px 14px; font-size: 13px; color: var(--muted); background: var(--panel); }
-.chip b { font: 700 15px var(--serif); }
+.chip b { font: 700 15px var(--sans); }
 
 table { border-collapse: collapse; font-size: 14px; margin: 10px 0 18px; max-width: 68ch; width: 100%; }
 th, td { border: 1px solid var(--line); padding: 9px 12px; text-align: left; vertical-align: top; }
@@ -55,7 +55,7 @@ td { color: var(--muted); }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; margin: 18px 0 8px; }
 .card { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 20px; text-decoration: none; transition: border-color .15s, transform .12s; }
 .card:hover { border-color: var(--muted); transform: translateY(-2px); }
-.card .sig { font: 700 22px var(--serif); margin-bottom: 8px; display: block; }
+.card .sig { font: 800 20px var(--sans); margin-bottom: 8px; display: block; }
 .card h3 { margin: 0 0 6px; }
 .card p { font-size: 13.5px; margin: 0; }
 
