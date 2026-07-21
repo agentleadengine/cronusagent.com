@@ -63,6 +63,8 @@
   .nav.open .menu-btn .bars span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .nav.open .menu-btn .bars span:nth-child(2) { opacity: 0; }
   .nav.open .menu-btn .bars span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+  .nav .links a.safety { font-size: 17px; font-weight: 800; color: var(--ivory); letter-spacing: -.01em; }
+  .nav .links a.safety:hover { text-decoration: underline; }
   @media (max-width: 700px) {
     .nav { flex-wrap: wrap; padding: 12px 18px; }
     .menu-btn { display: inline-flex; align-items: center; }
@@ -249,6 +251,7 @@
     <span class="name">Cronus Agent</span>
     <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
     <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety">AI Safety</a>
       <a href="#benefits">Benefits</a>
       <a href="#install">Install</a>
       <a href="docs.html">Docs</a>
@@ -267,7 +270,7 @@
     <p class="lede">Stop re-explaining yourself to tools that forget you. Stop carrying answers between six tabs. Cronus puts every AI agent you use on one desk, gives them one shared memory you own, and routes each job to whoever does it best - while your bill goes down, not up.</p>
     <div class="cta">
       <a class="btn solid" href="#install">Install Cronus</a>
-      <a class="btn ghost" href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Request access</a>
+      <a class="btn ghost" href="mission.html">Our mission</a>
     </div>
     <div style="margin-top:20px;font-size:13px;color:var(--dim)" id="gh-proof">Private alpha · a product of Agent Lead Engine LLC</div>
     <div class="agents">

@@ -28,6 +28,8 @@ header { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, v
 .nav.open .menu-btn .bars span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .nav.open .menu-btn .bars span:nth-child(2) { opacity: 0; }
 .nav.open .menu-btn .bars span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+.nav .links a.safety { font-size: 17px; font-weight: 800; color: var(--ivory); letter-spacing: -.01em; }
+.nav .links a.safety:hover { text-decoration: underline; }
 @media (max-width: 700px) {
   .nav { flex-wrap: wrap; padding: 12px 18px; }
   .menu-btn { display: inline-flex; align-items: center; }
