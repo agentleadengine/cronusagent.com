@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watching: honest status, real audits - AI safety - Cronus Agent</title>
+<meta name="description" content="Trust what you can see. Truthful tool health, a readable activity log, and a read-only audit that tells on risky settings.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Watching: honest status, real audits - AI safety - Cronus Agent">
+<meta property="og:description" content="Trust what you can see. Truthful tool health, a readable activity log, and a read-only audit that tells on risky settings.">
+<meta property="og:url" content="https://cronusagent.com/safety-watching.html">
+<meta property="og:image" content="https://cronusagent.com/info-watching-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety here">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html">Guides</a>
+      <a href="use-cases.html">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="ai-safety.html">AI Safety</a> · Part 5 of 7</div>
+  <h1>Watching: honest status, real audits</h1>
+
+  <figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin-bottom:8px"><video controls preload="metadata" poster="info-watching-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-watching.mp4" type="video/mp4"></video></figure>
+<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">Watch: trust what you can see · 56 seconds · animated, sound on</p>
+
+  <div class="why">
+    <div class="t">A comforting dashboard is a dangerous dashboard</div>
+    <p>You cannot trust answers from a stack you cannot see. Cronus would rather show you a gray dot than pretend a broken thing is fine.</p>
+  </div>
+
+  <h2 class="first">Status that tells the truth</h2>
+  <p>Tool Health shows every connected piece of your stack. Green means working, tested moments ago, not assumed from a config file. Gray means not connected, which is normal on any machine and never dressed up as anything else. When something breaks, you find out from the dashboard, not from a wrong answer three days later.</p>
+
+  <h2>The paper trail</h2>
+  <p>Every job leaves a record in the Activity log: what ran, which agent ran it, what came back. If you cannot see what ran, you cannot check it, and checking is the whole game.</p>
+
+  <h2>The audit that tells on your setup</h2>
+  <p>The Safety page runs a read-only scan over each agent's real configuration files and flags what it finds: risky settings like pre-approved destructive commands or forgotten auto-approve flags, each with a severity, the exact file it lives in, and a plain-words suggestion for what to do.</p>
+  <p>The first line of that page is the design promise: it only looks. It never changes your settings. The findings are yours to act on, or not.</p>
+
+  <div class="nextprev">
+    <a href="safety-actions.html">&larr; Part 4: Actions</a>
+    <a href="safety-keys.html">Part 6: Keys and data &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+</body>
+</html>

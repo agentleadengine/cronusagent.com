@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Actions: the human stays in the loop - AI safety - Cronus Agent</title>
+<meta name="description" content="A wrong answer wastes minutes, a wrong action sends the email. Guardrails, spend caps, the approvals inbox, and why Cronus never updates itself.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Actions: the human stays in the loop - AI safety - Cronus Agent">
+<meta property="og:description" content="A wrong answer wastes minutes, a wrong action sends the email. Guardrails, spend caps, the approvals inbox, and why Cronus never updates itself.">
+<meta property="og:url" content="https://cronusagent.com/safety-actions.html">
+<meta property="og:image" content="https://cronusagent.com/info-actions-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety here">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html">Guides</a>
+      <a href="use-cases.html">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="ai-safety.html">AI Safety</a> · Part 4 of 7</div>
+  <h1>Actions: the human stays in the loop</h1>
+
+  <figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin-bottom:8px"><video controls preload="metadata" poster="info-actions-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-actions.mp4" type="video/mp4"></video></figure>
+<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">Watch: thinking is cheap, doing is not · 60 seconds · animated, sound on</p>
+
+  <div class="why">
+    <div class="t">Thinking and doing are different risk classes</div>
+    <p>You can re-ask a bad answer. You cannot un-send an email or un-delete a file. So Cronus separates the two and puts a human gate in front of the second one.</p>
+  </div>
+
+  <h2 class="first">The leash length is yours to set</h2>
+  <p>The Safety page sets an approval mode for each agent, separately:</p>
+  <ul>
+    <li><b>Go ahead automatically.</b> For routine work you trust: reports, reads, drafts.</li>
+    <li><b>Ask about anything unfamiliar.</b> The sensible default. New or unusual actions stop and check with you first.</li>
+    <li><b>Always ask.</b> Nothing leaves this computer without your yes.</li>
+  </ul>
+  <p>These are not cosmetic toggles. Under the hood, each mode drives that agent's own real permission system, so the limit holds everywhere the agent runs, not just inside Cronus windows.</p>
+
+  <h2>Spend caps</h2>
+  <p>Give any agent an optional dollar cap. When it hits the cap, Cronus pauses that agent's next action and asks you to raise the limit before it continues. AI spend stays loud, never silent.</p>
+
+  <h2>The approvals inbox</h2>
+  <p>Risky actions land in an inbox and wait. You see exactly what an agent wants to do before it does it, and you decide. A wrong action that never ran costs nothing.</p>
+
+  <h2>No self-updates, ever</h2>
+  <p>Cronus never changes itself behind your back. It does not auto-update, does not check for updates on its own, and does not phone home. New versions are installers you choose to run, or not. Boring, predictable software you can trust with real work.</p>
+
+  <div class="nextprev">
+    <a href="safety-grounding.html">&larr; Part 3: Grounding</a>
+    <a href="safety-watching.html">Part 5: Watching &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+</body>
+</html>

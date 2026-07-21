@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grounding: memory beats guessing - AI safety - Cronus Agent</title>
+<meta name="description" content="A grounded model quotes, an ungrounded one invents. The measured difference grounding makes, and how Hindsight memory applies it to your work.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Grounding: memory beats guessing - AI safety - Cronus Agent">
+<meta property="og:description" content="A grounded model quotes, an ungrounded one invents. The measured difference grounding makes, and how Hindsight memory applies it to your work.">
+<meta property="og:url" content="https://cronusagent.com/safety-grounding.html">
+<meta property="og:image" content="https://cronusagent.com/info-grounding-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety here">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html">Guides</a>
+      <a href="use-cases.html">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="ai-safety.html">AI Safety</a> · Part 3 of 7</div>
+  <h1>Grounding: memory beats guessing</h1>
+
+  <figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin-bottom:8px"><video controls preload="metadata" poster="info-grounding-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-grounding.mp4" type="video/mp4"></video></figure>
+<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">Watch: what grounding measurably does · 61 seconds · animated, sound on</p>
+
+  <div class="why">
+    <div class="t">Measured, not promised</div>
+    <p>When Stanford researchers tested models on legal questions, grounding them in real document databases cut hallucinations by more than half. Not to zero. More than half is worth building around; zero is a lie.</p>
+  </div>
+
+  <h2 class="first">Two very different machines</h2>
+  <p>Ask an ungrounded model about your business and it fills the silence from patterns. Ask a grounded one and it reads your actual documents and memory before it answers. Same question, completely different failure modes.</p>
+
+  <h2>The measurement</h2>
+  <p>Stanford researchers asked models legal questions at scale. Without grounding, they hallucinated on 58 to 88 percent of them, depending on the model. Tools grounded in real, curated document databases cut that to 17 to 33 percent. That is the honest shape of the win: grounding cut errors by more than half, and the best grounded tool still got one in six wrong.</p>
+
+  <h2>What this means for your agents</h2>
+  <p>Memory is grounding applied to your own work. Without it, a model asked about last month's decision has two options: admit it does not know, or invent your history. Cronus agents share one memory system, <a href="hindsight.html">Hindsight</a>, and it changes the math:</p>
+  <ul>
+    <li><b>Answers come from what was recorded,</b> not from what plausibly might have happened. That is a lookup, not a guess.</li>
+    <li><b>Memory is inspectable and correctable.</b> It lives on your disk. A wrong memory is something you can find and delete, not a mystery inside someone's cloud.</li>
+    <li><b>Shared memory keeps agents consistent.</b> One record, one version of the truth, across every agent on the desk.</li>
+  </ul>
+
+  <h2>The honest limit</h2>
+  <p>Memory prevents the "inventing your history" class of hallucination. It does not make a model incapable of being wrong about the outside world, and a memory system will faithfully store a mistake if a mistake gets written down. That is why memory you can see matters as much as memory that exists.</p>
+
+  <p style="font-size:13.5px;color:var(--dim)">Sources: Dahl et al., <a href="https://arxiv.org/abs/2401.01301">Large Legal Fictions</a>, 2024 · Stanford RegLab, <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">Hallucination-Free?</a>, 2024.</p>
+
+  <div class="nextprev">
+    <a href="safety-context.html">&larr; Part 2: Context</a>
+    <a href="safety-actions.html">Part 4: Actions &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+</body>
+</html>

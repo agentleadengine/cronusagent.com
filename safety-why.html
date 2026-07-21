@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why AI makes things up - AI safety - Cronus Agent</title>
+<meta name="description" content="AI does not lie, it guesses. Why models hallucinate, why the way we grade them makes it worse, and how often it really happens. With sources.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Why AI makes things up - AI safety - Cronus Agent">
+<meta property="og:description" content="AI does not lie, it guesses. Why models hallucinate, why the way we grade them makes it worse, and how often it really happens. With sources.">
+<meta property="og:url" content="https://cronusagent.com/safety-why.html">
+<meta property="og:image" content="https://cronusagent.com/info-why-ai-guesses-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety here">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html">Guides</a>
+      <a href="use-cases.html">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="ai-safety.html">AI Safety</a> · Part 1 of 7</div>
+  <h1>Why AI makes things up</h1>
+
+  <figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin-bottom:8px"><video controls preload="metadata" poster="info-why-ai-guesses-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-why-ai-guesses.mp4" type="video/mp4"></video></figure>
+<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">Watch: why AI makes things up · 78 seconds · animated, sound on</p>
+
+  <div class="why">
+    <div class="t">The most useful thing you can know about AI</div>
+    <p>Hallucination is mostly an information problem, not an intelligence problem. Control what the model sees and you control the guessing. Every other part of this series builds on that.</p>
+  </div>
+
+  <h2 class="first">Prediction is not lookup</h2>
+  <p>A model does not look facts up. It predicts the next word from patterns it learned. When it knows the answer, prediction and truth line up. When it does not know, it still predicts, and the result is a confident, fluent, wrong answer. And you cannot tell by looking, because confidence is the one thing a language model never runs out of.</p>
+
+  <h2>Guessing gets rewarded</h2>
+  <p>Researchers at OpenAI showed a blunt reason hallucination survives training: models are graded like students on tests where a lucky guess can score a point and an honest "I don't know" scores zero. Score enough tests that way and you have taught the model that bluffing beats honesty. Hallucination is not a mystery. It is what gets rewarded.</p>
+
+  <h2>How often it happens</h2>
+  <p>With the source document sitting right in front of them, the best models still invent facts in roughly one summary out of a hundred. On harder benchmarks, even frontier reasoning models cross one in ten. Those are good odds for a demo and bad odds for a decision that matters.</p>
+
+  <h2>What follows from this</h2>
+  <p>If the problem is information, the fix is not a better guesser. It is a system built around the guessing: control what the model sees (<a href="safety-context.html">part 2</a>), give it real facts to look up (<a href="safety-grounding.html">part 3</a>), and let it say I don't know without being punished for it. That is the design brief Cronus is built around.</p>
+
+  <p style="font-size:13.5px;color:var(--dim)">Sources: Kalai, Nachum, Vempala, Zhang, <a href="https://arxiv.org/abs/2509.04664">Why Language Models Hallucinate</a>, OpenAI, 2025 · <a href="https://github.com/vectara/hallucination-leaderboard">Vectara Hallucination Leaderboard</a>, 2025-2026.</p>
+
+  <div class="nextprev">
+    <a href="ai-safety.html">&larr; AI safety hub</a>
+    <a href="safety-context.html">Part 2: Context &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+</body>
+</html>

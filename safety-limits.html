@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What none of this can do - AI safety - Cronus Agent</title>
+<meta name="description" content="Nothing makes AI incapable of being wrong. What the safety stack really does, and why the last check stays with you.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="What none of this can do - AI safety - Cronus Agent">
+<meta property="og:description" content="Nothing makes AI incapable of being wrong. What the safety stack really does, and why the last check stays with you.">
+<meta property="og:url" content="https://cronusagent.com/safety-limits.html">
+<meta property="og:image" content="https://cronusagent.com/info-limits-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety here">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html">Guides</a>
+      <a href="use-cases.html">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="ai-safety.html">AI Safety</a> · Part 7 of 7</div>
+  <h1>What none of this can do</h1>
+
+  <figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin-bottom:8px"><video controls preload="metadata" poster="info-limits-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-limits.mp4" type="video/mp4"></video></figure>
+<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">Watch: the honest ending · 52 seconds · animated, sound on</p>
+
+  <div class="why">
+    <div class="t">The honest ending</div>
+    <p>No context system, no memory, no grader, no guardrail gets hallucinations to zero. Anyone who tells you otherwise is selling something.</p>
+  </div>
+
+  <h2 class="first">What the stack actually does</h2>
+  <p>It shrinks the problem. Deliberate context and grounded memory mean less guessing. Graded prompts mean better inputs. Approvals mean risky actions get caught by a human before they happen. The result is smaller, rarer, more visible mistakes. Not zero mistakes.</p>
+
+  <h2>The last check is yours</h2>
+  <p>Check work that matters before you rely on it. Every honest AI company will tell you the same thing, usually in the fine print. We put it in the headline: Cronus is built to make checking easy, not to make it unnecessary.</p>
+
+  <h2>The formal version</h2>
+  <p>Cronus is alpha software from Agent Lead Engine LLC. AI models can be wrong, and you are responsible for verifying your own work before acting on it. The <a href="disclaimer.html">disclaimer</a> is the complete statement, and <a href="security.html">Security, in plain words</a> covers the practical risks of running agents at all.</p>
+
+  <div class="nextprev">
+    <a href="safety-keys.html">&larr; Part 6: Keys and data</a>
+    <a href="ai-safety.html">Back to the AI safety hub &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+</body>
+</html>

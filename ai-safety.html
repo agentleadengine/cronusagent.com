@@ -51,7 +51,20 @@
   </figure>
   <p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">2 minutes 29 seconds · narrated · sound on</p>
 
-  <h2 class="first">Why AI makes things up</h2>
+
+  <h2 class="first" style="border-top:none;padding-top:0">The series: seven short explainers</h2>
+  <p>Each part is its own page: an animated infographic video plus the plain-words version, with sources. Watch them in order or jump to what you need.</p>
+  <div class="cards">
+    <a class="card" href="safety-why.html"><span class="sig">01</span><h3>Why AI makes things up</h3><p>Prediction is not lookup, and guessing gets rewarded.</p></a>
+    <a class="card" href="safety-context.html"><span class="sig">02</span><h3>Context</h3><p>A desk, not a warehouse. Context rot and the lost middle.</p></a>
+    <a class="card" href="safety-grounding.html"><span class="sig">03</span><h3>Grounding</h3><p>What memory measurably does to hallucinations.</p></a>
+    <a class="card" href="safety-actions.html"><span class="sig">04</span><h3>Actions</h3><p>Guardrails, spend caps, and the approvals inbox.</p></a>
+    <a class="card" href="safety-watching.html"><span class="sig">05</span><h3>Watching</h3><p>Honest status, the activity log, the read-only audit.</p></a>
+    <a class="card" href="safety-keys.html"><span class="sig">06</span><h3>Keys and data</h3><p>A write-only vault and models that keep words home.</p></a>
+    <a class="card" href="safety-limits.html"><span class="sig">07</span><h3>What none of this can do</h3><p>The honest ending: the last check is yours.</p></a>
+  </div>
+
+  <h2>Why AI makes things up</h2>
   <p>A model does not look facts up. It predicts the next word based on patterns it learned. When it knows the answer, prediction and truth line up. When it does not know, it still predicts, and the result is a confident, fluent, wrong answer. That is a hallucination.</p>
   <p>Here is the part most people miss: <b>hallucination is mostly an information problem, not an intelligence problem.</b> Ask the smartest model in the world about your client with no information about your client, and it has nothing to predict from except vibes. Give a modest model the actual email thread, and it quotes reality. The single biggest thing you control is what the model gets to see.</p>
   <div class="why">
@@ -59,8 +72,7 @@
     <p>A model can only be as truthful as the context you hand it. Manage the context and you manage the hallucinations. That is why Cronus treats context and memory as the product, not a feature.</p>
   </div>
 
-<figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin:18px 0 6px"><video controls preload="metadata" poster="info-why-ai-guesses-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-why-ai-guesses.mp4" type="video/mp4"></video></figure>
-<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:26px">Watch: why AI makes things up · 78 seconds · animated, with sources on screen</p>
+  <p><a href="safety-why.html">Watch and read part 1: Why AI makes things up &rarr;</a></p>
 
   <h2>Context: what the model sees right now</h2>
   <p>The context window (explained in <a href="ai-basics.html">AI words, translated</a>) is the model's working desk. Everything it can use has to be on that desk. Three things go wrong with it:</p>
@@ -76,8 +88,7 @@
     <li><b>Cronus asks instead of guessing.</b> The router has a clarify move: when your request is genuinely ambiguous, it asks one question instead of picking a reading and running with it. An honest "which one did you mean?" beats a confident wrong guess every time.</li>
   </ul>
 
-<figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin:18px 0 6px"><video controls preload="metadata" poster="info-context-limits-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-context-limits.mp4" type="video/mp4"></video></figure>
-<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:26px">Watch: context rot and the lost middle · 74 seconds · animated, with sources on screen</p>
+  <p><a href="safety-context.html">Watch and read part 2: Context &rarr;</a></p>
 
   <h2>Memory: what the model can look up</h2>
   <p>Context solves right now. Memory solves across time. Without memory, every session starts from zero, and a model asked about last month's decision has exactly two options: admit it does not know, or make something up. Models are trained to be helpful, so they lean toward the second one. A huge share of real-world hallucinations are just this: <b>the model inventing your own history because nobody stored it.</b></p>
@@ -89,8 +100,7 @@
   </ul>
   <p>Honest limits: memory prevents the "inventing your history" class of hallucination. It does not make a model incapable of being wrong about the outside world, and a memory system can store a mistake if a mistake gets written down. That is why memory being visible on your disk matters as much as memory existing.</p>
 
-<figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin:18px 0 6px"><video controls preload="metadata" poster="info-grounding-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-grounding.mp4" type="video/mp4"></video></figure>
-<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:26px">Watch: what grounding measurably does · 61 seconds · animated, with sources on screen</p>
+  <p><a href="safety-grounding.html">Watch and read part 3: Grounding &rarr;</a></p>
 
   <h2>Better prompts in, better answers out</h2>
   <p>A vague prompt is an invitation to guess. "Make this better" forces the model to invent what better means. The composer's <b>Prompt Rater</b> grades your draft A to F against a strict rubric and tells you what is missing: the goal, the constraints, the definition of done. <b>Fix it for me</b> writes an A-standard rewrite, and you choose to use it or keep yours. It never replaces your words on its own.</p>
@@ -104,12 +114,16 @@
     <li><b>No self-updates, no phoning home.</b> Cronus never changes itself behind your back. New versions are installers you choose to run.</li>
   </ul>
 
+  <p><a href="safety-actions.html">Watch and read part 4: Actions &rarr;</a></p>
+
   <h2>Watching: honest status, real audits</h2>
   <ul>
     <li><b>Tool Health tells the truth.</b> Green means working and tested moments ago. Gray means not connected. It never pretends a broken thing is fine, because you cannot trust answers from a stack you cannot see.</li>
     <li><b>Activity shows what actually ran.</b> Every job, every route, every result, in one log you can read.</li>
     <li><b>Security audit reads the real configs.</b> A read-only scanner goes over each agent's actual configuration and flags risky settings, like auto-approve flags you may have forgotten about, with a severity and a suggested fix.</li>
   </ul>
+
+  <p><a href="safety-watching.html">Watch and read part 5: Watching &rarr;</a></p>
 
   <h2>Your keys and your data</h2>
   <ul>
@@ -118,9 +132,13 @@
     <li><b>Everything important is on your disk.</b> Memory, transcripts, settings. Yours to read, back up, or delete. The <a href="why-own-it.html">ownership page</a> covers why that matters.</li>
   </ul>
 
+  <p><a href="safety-keys.html">Watch and read part 6: Keys and data &rarr;</a></p>
+
   <h2>What none of this can do</h2>
   <p>No system makes AI incapable of being wrong. Context management shrinks the guessing, memory grounds the history, the rater sharpens the inputs, approvals catch the actions, and the audits keep the setup honest. What remains is on you: <b>check work that matters before you rely on it.</b> Cronus is built to make checking easy, not to make it unnecessary.</p>
   <p>Related reading: <a href="security.html">Security, in plain words</a> for the practical risks of running agents, and the <a href="disclaimer.html">disclaimer</a> for the formal version.</p>
+
+  <p><a href="safety-limits.html">Watch and read part 7: What none of this can do &rarr;</a></p>
 
   <h2>Sources for the numbers in these videos</h2>
   <ul>
@@ -139,9 +157,67 @@
 </main>
 
 <footer>
-  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol">
+        <div class="fbrandrow"><img src="icon.png" alt=""><span class="fname">Cronus Agent</span></div>
+        <p class="fblurb">A local-first desk for every AI agent you use, on your own machine.</p>
+        <div class="fver">Cronus Agent <span id="ver-badge"></span></div>
+      </div>
+      <div class="fcol">
+        <div class="fh">Product</div>
+        <a href="index.html#install">Install</a>
+        <a href="get-cronus.html">Get Cronus</a>
+        <a href="why.html">Why Cronus</a>
+        <a href="mission.html">Mission</a>
+        <a href="ai-safety.html">AI Safety</a>
+      </div>
+      <div class="fcol">
+        <div class="fh">Learn</div>
+        <a href="docs.html">Docs</a>
+        <a href="guides.html">Guides</a>
+        <a href="ai-basics.html">AI basics</a>
+        <a href="use-cases.html">Use cases</a>
+      </div>
+      <div class="fcol">
+        <div class="fh">Trust</div>
+        <a href="security.html">Security</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="request-access.html">Contact</a>
+      </div>
+    </div>
+    <div class="fbottom">&copy; Agent Lead Engine LLC &middot; All rights reserved.</div>
+  </div>
 </footer>
 
 <script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+<script id="cr-reveal">
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var els = Array.prototype.slice.call(document.querySelectorAll(
+    ".card, .gcard, .stepcard, .step, .ask, .mem, .bcard, .chip, .why, .learn a"
+  ));
+  if (!els.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  var vh = window.innerHeight || document.documentElement.clientHeight;
+  var groups = [];
+  var indexIn = function (p) {
+    for (var i = 0; i < groups.length; i++) if (groups[i].p === p) return ++groups[i].n;
+    groups.push({ p: p, n: 0 });
+    return 0;
+  };
+  els.forEach(function (el) {
+    var n = indexIn(el.parentElement);
+    el.style.setProperty("--rd", Math.min(n * 60, 360) + "ms");
+    el.classList.add("reveal");
+    if (el.getBoundingClientRect().top < vh) { el.classList.add("in"); return; }
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
