@@ -96,9 +96,67 @@
 </main>
 
 <footer>
-  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol">
+        <div class="fbrandrow"><img src="icon.png" alt=""><span class="fname">Cronus Agent</span></div>
+        <p class="fblurb">A local-first desk for every AI agent you use, on your own machine.</p>
+        <div class="fver">Cronus Agent <span id="ver-badge"></span></div>
+      </div>
+      <div class="fcol">
+        <div class="fh">Product</div>
+        <a href="index.html#install">Install</a>
+        <a href="get-cronus.html">Get Cronus</a>
+        <a href="why.html">Why Cronus</a>
+        <a href="mission.html">Mission</a>
+        <a href="ai-safety.html">AI Safety</a>
+      </div>
+      <div class="fcol">
+        <div class="fh">Learn</div>
+        <a href="docs.html">Docs</a>
+        <a href="guides.html">Guides</a>
+        <a href="ai-basics.html">AI basics</a>
+        <a href="use-cases.html">Use cases</a>
+      </div>
+      <div class="fcol">
+        <div class="fh">Trust</div>
+        <a href="security.html">Security</a>
+        <a href="disclaimer.html">Disclaimer</a>
+        <a href="request-access.html">Contact</a>
+      </div>
+    </div>
+    <div class="fbottom">&copy; Agent Lead Engine LLC &middot; All rights reserved.</div>
+  </div>
 </footer>
 
 <script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+<script id="cr-reveal">
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var els = Array.prototype.slice.call(document.querySelectorAll(
+    ".card, .gcard, .stepcard, .step, .ask, .mem, .bcard, .chip, .why, .learn a"
+  ));
+  if (!els.length) return;
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
+    });
+  }, { threshold: 0.12 });
+  var vh = window.innerHeight || document.documentElement.clientHeight;
+  var groups = [];
+  var indexIn = function (p) {
+    for (var i = 0; i < groups.length; i++) if (groups[i].p === p) return ++groups[i].n;
+    groups.push({ p: p, n: 0 });
+    return 0;
+  };
+  els.forEach(function (el) {
+    var n = indexIn(el.parentElement);
+    el.style.setProperty("--rd", Math.min(n * 60, 360) + "ms");
+    el.classList.add("reveal");
+    if (el.getBoundingClientRect().top < vh) { el.classList.add("in"); return; }
+    io.observe(el);
+  });
+})();
+</script>
 </body>
 </html>
