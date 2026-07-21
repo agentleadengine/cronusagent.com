@@ -13,6 +13,7 @@
 <meta property="og:image" content="https://cronusagent.com/shot-dashboard.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -78,8 +79,9 @@
 </main>
 
 <footer>
-  <div class="wrap">Cronus Agent · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a></div>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a></div>
 </footer>
 
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
 </body>
 </html>

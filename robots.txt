@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cronusagent.com/sitemap.xml
