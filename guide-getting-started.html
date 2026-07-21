@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide: Getting started - Cronus Agent</title>
+<meta name="description" content="From a fresh install to your first answered message in five minutes - the narrated Cronus getting-started guide.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Guide: Getting started - Cronus Agent">
+<meta property="og:description" content="From a fresh install to your first answered message in five minutes - the narrated Cronus getting-started guide.">
+<meta property="og:url" content="https://cronusagent.com/guide-getting-started.html">
+<meta property="og:image" content="https://cronusagent.com/guide-getting-started-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <nav class="links">
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html" class="here">Guides</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="guides.html">Guides</a> · 01</div>
+  <h1>Getting started</h1>
+  <p class="lede">From a fresh install to your first answered message. About five minutes, nothing permanent, narrated below if you would rather watch than read.</p>
+
+  <figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin-bottom:8px">
+    <video controls preload="metadata" poster="guide-getting-started-poster.jpg" style="display:block;width:100%;height:auto">
+      <source src="guide-getting-started.mp4" type="video/mp4">
+    </video>
+  </figure>
+  <p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">84 seconds · narrated · sound on</p>
+
+  <h2 class="first">Why this matters</h2>
+  <div class="why">
+    <div class="t">One desk instead of six tabs</div>
+    <p>The point of setup is not configuration for its own sake. Every tool you connect here becomes something you never have to context-switch to again - one chat routes to all of it, and one health check tells you the truth about all of it.</p>
+  </div>
+
+  <h2>Step by step</h2>
+  <h3>1. Install and start</h3>
+  <p>Run the installer from your alpha invite, or from source: clone the repo and run <code>python3 run.py</code> (Windows: <code>py run.py</code>). The dashboard opens at <code>localhost:8787/cronus</code> - or in its own window if you use the desktop app.</p>
+
+  <h3>2. Meet the setup wizard</h3>
+  <p>On a fresh machine Cronus opens Setup first. The steps sit along the top - Welcome, Health check, Install tools, Models, Agents - and every one of them can be skipped and revisited later. Nothing in the wizard is a commitment.</p>
+
+  <h3>3. Read the health check</h3>
+  <p>This is Cronus looking at your computer and reporting honestly. Green dot: working, tested seconds ago. Gray dot: not connected yet - normal on a new machine, never an error. Each gray row tells you exactly how to connect that piece when you want it.</p>
+
+  <h3>4. Connect one brain</h3>
+  <p>Chat needs at least one AI model. The model cards explain each option in plain words - what it is good at, what it costs, what to watch out for. The free path: install <a href="https://ollama.com">Ollama</a>, run <code>ollama pull qwen3:4b</code>, and Cronus lists it as "local, free" automatically. Have a Claude plan or an API key? Those cards show exactly how to connect them.</p>
+
+  <h3>5. Say something</h3>
+  <p>Land in Oracle, the main chat, and ask for what you want in plain words - "what can you help me with?" is a fine start. Cronus answers directly or routes the job to an agent and tells you which. The first reply on a local model is the slowest one you will ever see (the model is loading into memory); it gets quicker from there.</p>
+
+  <h3>If something does not work</h3>
+  <p>Go back to the health check - it exists for exactly this moment. Whatever failed will have a gray or amber row with a fix hint. Still stuck? <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20support">Email us</a> what the health check says.</p>
+
+  <div class="nextprev">
+    <a href="guides.html">&larr; All guides</a>
+    <a href="docs.html">Docs hub &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a></div>
+</footer>
+
+</body>
+</html>
