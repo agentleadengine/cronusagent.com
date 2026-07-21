@@ -1,11 +1,12 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "date": "2026-07-21",
   "highlights": [
-    "Agent terminal pages for Hermes, Claude, and OpenClaw",
-    "Foresight: memory-driven automation proposals",
-    "Sleek UI pass with streaming replies",
-    "Self-contained locked installers"
+    "Composer @-mentions: @hermes, @claude, @openclaw skip the router",
+    "Prompt Rater on the composer: strict A-F grades that explain themselves",
+    "Fix it for me: an A-standard rewrite you approve before it sends",
+    "Drafts survive restarts",
+    "Security fixes from the feature-wave audit"
   ],
   "download": "https://cronusagent.com/#install"
 }
