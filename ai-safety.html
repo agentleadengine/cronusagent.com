@@ -58,6 +58,9 @@
     <p>A model can only be as truthful as the context you hand it. Manage the context and you manage the hallucinations. That is why Cronus treats context and memory as the product, not a feature.</p>
   </div>
 
+<figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin:18px 0 6px"><video controls preload="metadata" poster="info-why-ai-guesses-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-why-ai-guesses.mp4" type="video/mp4"></video></figure>
+<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:26px">Watch: why AI makes things up · 78 seconds · animated, with sources on screen</p>
+
   <h2>Context: what the model sees right now</h2>
   <p>The context window (explained in <a href="ai-basics.html">AI words, translated</a>) is the model's working desk. Everything it can use has to be on that desk. Three things go wrong with it:</p>
   <ul>
@@ -72,6 +75,9 @@
     <li><b>Cronus asks instead of guessing.</b> The router has a clarify move: when your request is genuinely ambiguous, it asks one question instead of picking a reading and running with it. An honest "which one did you mean?" beats a confident wrong guess every time.</li>
   </ul>
 
+<figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin:18px 0 6px"><video controls preload="metadata" poster="info-context-limits-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-context-limits.mp4" type="video/mp4"></video></figure>
+<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:26px">Watch: context rot and the lost middle · 74 seconds · animated, with sources on screen</p>
+
   <h2>Memory: what the model can look up</h2>
   <p>Context solves right now. Memory solves across time. Without memory, every session starts from zero, and a model asked about last month's decision has exactly two options: admit it does not know, or make something up. Models are trained to be helpful, so they lean toward the second one. A huge share of real-world hallucinations are just this: <b>the model inventing your own history because nobody stored it.</b></p>
   <p>Cronus agents share one memory system, <a href="hindsight.html">Hindsight</a>, and it changes the math:</p>
@@ -81,6 +87,9 @@
     <li><b>Shared memory keeps agents consistent.</b> When every agent draws from the same record, you stop getting three different versions of the truth from three different tools.</li>
   </ul>
   <p>Honest limits: memory prevents the "inventing your history" class of hallucination. It does not make a model incapable of being wrong about the outside world, and a memory system can store a mistake if a mistake gets written down. That is why memory being visible on your disk matters as much as memory existing.</p>
+
+<figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin:18px 0 6px"><video controls preload="metadata" poster="info-grounding-poster.jpg" style="display:block;width:100%;height:auto"><source src="info-grounding.mp4" type="video/mp4"></video></figure>
+<p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:26px">Watch: what grounding measurably does · 61 seconds · animated, with sources on screen</p>
 
   <h2>Better prompts in, better answers out</h2>
   <p>A vague prompt is an invitation to guess. "Make this better" forces the model to invent what better means. The composer's <b>Prompt Rater</b> grades your draft A to F against a strict rubric and tells you what is missing: the goal, the constraints, the definition of done. <b>Fix it for me</b> writes an A-standard rewrite, and you choose to use it or keep yours. It never replaces your words on its own.</p>
@@ -111,6 +120,16 @@
   <h2>What none of this can do</h2>
   <p>No system makes AI incapable of being wrong. Context management shrinks the guessing, memory grounds the history, the rater sharpens the inputs, approvals catch the actions, and the audits keep the setup honest. What remains is on you: <b>check work that matters before you rely on it.</b> Cronus is built to make checking easy, not to make it unnecessary.</p>
   <p>Related reading: <a href="security.html">Security, in plain words</a> for the practical risks of running agents, and the <a href="disclaimer.html">disclaimer</a> for the formal version.</p>
+
+  <h2>Sources for the numbers in these videos</h2>
+  <ul>
+    <li>Kalai, Nachum, Vempala, Zhang, <a href="https://arxiv.org/abs/2509.04664">Why Language Models Hallucinate</a>, OpenAI, 2025. Why evaluations reward guessing over honesty.</li>
+    <li><a href="https://github.com/vectara/hallucination-leaderboard">Vectara Hallucination Leaderboard</a>, 2025-2026. Hallucination rates on grounded summarization and harder judge benchmarks.</li>
+    <li>Hong, Troynikov, Huber, <a href="https://research.trychroma.com/context-rot">Context Rot</a>, Chroma Research, 2025. 18 frontier models degrade as input length grows.</li>
+    <li>Liu et al., <a href="https://arxiv.org/abs/2307.03172">Lost in the Middle</a>, 2023. Models recall the start and end of long context best.</li>
+    <li>Dahl et al., <a href="https://arxiv.org/abs/2401.01301">Large Legal Fictions</a>, 2024, and Stanford RegLab, <a href="https://reglab.stanford.edu/publications/hallucination-free-assessing-the-reliability-of-leading-ai-legal-research-tools/">Hallucination-Free?</a>, 2024. Hallucination rates with and without document grounding.</li>
+  </ul>
+  <p>If any of these numbers stops holding up, we will change the videos. That is the deal.</p>
 
   <div class="nextprev">
     <a href="hindsight.html">&larr; Memory, aka Hindsight</a>
