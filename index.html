@@ -216,21 +216,21 @@
       <a href="#install">Install</a>
       <a href="docs.html">Docs</a>
       <a href="mission.html">Mission</a>
-      <a href="https://github.com/agentleadengine/cronus-agent">GitHub</a>
+      <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a>
     </nav>
   </div>
 </header>
 
 <div class="hero">
   <div class="wrap">
-    <div class="kicker">Local-first · Open source · Your machine, your agents</div>
+    <div class="kicker">Local-first · Private alpha · Your machine, your agents</div>
     <h1>All of your agents, one desk.</h1>
     <p class="lede">Cronus is a desktop app that puts your AI agents in one place. Ask Cronus anything and it answers or hands the job to the right agent. Or skip the middleman: every agent opens as its own window, right from the dock.</p>
     <div class="cta">
       <a class="btn solid" href="#install">Install Cronus</a>
-      <a class="btn ghost" href="https://github.com/agentleadengine/cronus-agent">View on GitHub</a>
+      <a class="btn ghost" href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Request access</a>
     </div>
-    <div style="margin-top:20px;font-size:13px;color:var(--dim)" id="gh-proof">Open source on GitHub</div>
+    <div style="margin-top:20px;font-size:13px;color:var(--dim)" id="gh-proof">Private alpha · a product of Agent Lead Engine LLC</div>
     <div class="agents">
       <span class="chip"><b style="color:var(--hermes)">Η</b> Hermes · learns your skills</span>
       <span class="chip"><b style="color:var(--claude)">Κ</b> Claude · code and deep work</span>
@@ -358,7 +358,7 @@
 <section id="install">
   <div class="wrap">
     <h2>Install</h2>
-    <p class="sub">Two minutes from zero to the dashboard. You need git and Python 3.11 or newer; everything else installs itself on first run.</p>
+    <p class="sub">Two minutes from zero to the dashboard. Your alpha invite includes access to the private code repository - the commands below work once that access is set up. You need git and Python 3.11 or newer; everything else installs itself on first run.</p>
 
     <p class="sub" style="margin-top:-18px">Works on macOS, Windows, and Linux. For the free local model: 8 GB of RAM works, 16 GB is comfortable. The installers need nothing else; installing from source needs git and Python 3.11+.</p>
     <div class="gate" id="gate-box">
@@ -369,7 +369,7 @@
         <button id="gate-go">Unlock</button>
       </div>
       <p class="err" id="gate-err"></p>
-      <p style="margin-bottom:0;margin-top:4px">No code yet? <a href="https://github.com/agentleadengine/cronus-agent/issues/new?title=Alpha%20access%20request">Open a short intro on GitHub</a> and we will send you one.</p>
+      <p style="margin-bottom:0;margin-top:4px">No code yet? <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Email us a short intro</a> and we will send you one.</p>
     </div>
     <div id="install-content">
     <div class="tabs">
@@ -418,7 +418,7 @@ py run.py</code><button class="copy">copy</button></pre>
       </div></div>
       <div class="step"><div class="n">3</div><div>
         <h4>Want the installer instead?</h4>
-        <p>A self-contained <code>Cronus Setup.exe</code> (no Python needed at all) is built by the project's CI. Grab the newest one from the <a href="https://github.com/agentleadengine/cronus-agent/actions">Actions page</a> under "Desktop builds", or build it yourself with <code>npm run dist:win</code> in <code>desktop/</code>.</p>
+        <p>A self-contained <code>Cronus Setup.exe</code> (no Python needed at all) comes with your alpha invite - we send the installer directly, or you can build it yourself with <code>npm run dist:win</code> in <code>desktop/</code> once you have repo access.</p>
       </div></div>
     </div>
 
@@ -441,7 +441,7 @@ ollama pull qwen3:4b</code><button class="copy">copy</button></pre>
       </div></div>
     </div>
 
-    <div class="note"><b>Honest note about installers:</b> prebuilt installers are currently unsigned, so Windows SmartScreen and some antivirus tools will warn or quarantine until you allow them. That is a signing-certificate formality, not a judgment of the code, which is fully open source and reviewable on GitHub. Installing from source (step 1) avoids the warnings entirely. Code signing is on the roadmap.</div>
+    <div class="note"><b>Honest note about installers:</b> prebuilt installers are currently unsigned, so Windows SmartScreen and some antivirus tools will warn or quarantine until you allow them. That is a signing-certificate formality, not a judgment of the code. Installing from source (step 1) avoids the warnings entirely. Code signing is on the roadmap.</div>
   </div>
   </div>
 </section>
@@ -462,12 +462,12 @@ ollama pull qwen3:4b</code><button class="copy">copy</button></pre>
   <div class="wrap">
     <h2>Questions people actually ask</h2>
     <div class="grid" style="max-width:900px;margin:0 auto">
-      <div class="card"><h3>Is it free?</h3><p>The software is free and open source (MIT). With a local model the whole thing costs nothing. Cloud models bill through your own accounts, on your own terms - Cronus never touches your money.</p></div>
+      <div class="card"><h3>What does it cost?</h3><p>Cronus is currently part of Agent Lead Engine LLC's consulting package - alpha access comes with it. Once installed, running on a local model adds nothing; cloud models bill through your own accounts, on your own terms.</p></div>
       <div class="card"><h3>Is my data private?</h3><p>Cronus runs on your machine, has no account system, and sends no telemetry. The only thing that ever leaves is a message you route to a cloud model, and it goes straight to that provider, nowhere else.</p></div>
       <div class="card"><h3>What do I need?</h3><p>A reasonably modern computer on macOS, Windows, or Linux. 8 GB of RAM runs the free local model; 16 GB is comfortable. No accounts, no card.</p></div>
       <div class="card"><h3>Do I need all three agents?</h3><p>No. Cronus works with whatever you have installed and shows an honest gray dot for the rest. Start with just the free local model and add agents when you want them.</p></div>
       <div class="card"><h3>Can I uninstall it cleanly?</h3><p>Yes, and we tell you how: delete the app, then two folders in your home directory. No leftovers, no lurking services, no "are you sure" retention tricks.</p></div>
-      <div class="card"><h3>How do I get an alpha code?</h3><p><a href="https://github.com/agentleadengine/cronus-agent/issues/new?title=Alpha%20access%20request">Open a short intro on GitHub</a> - who you are and what you want to use it for. That is the whole application.</p></div>
+      <div class="card"><h3>How do I get an alpha code?</h3><p><a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Email us a short intro</a> - who you are and what you want to use it for. That is the whole application.</p></div>
     </div>
   </div>
 </section>
@@ -490,7 +490,7 @@ ollama pull qwen3:4b</code><button class="copy">copy</button></pre>
 
 <footer>
   <div class="wrap">
-    Cronus Agent · © Agent Lead Engine LLC · MIT licensed · <a href="disclaimer.html">Disclaimer</a> · <a href="https://github.com/agentleadengine/cronus-agent">GitHub</a>
+    Cronus Agent · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a>
   </div>
 </footer>
 
@@ -524,16 +524,6 @@ ollama pull qwen3:4b</code><button class="copy">copy</button></pre>
   }
   document.getElementById("gate-go").addEventListener("click", tryUnlock);
   document.getElementById("gate-pass").addEventListener("keydown", e => { if (e.key === "Enter") tryUnlock(); });
-
-  // live GitHub stars - real number, fetched client-side, no tracking
-  fetch("https://api.github.com/repos/agentleadengine/cronus-agent")
-    .then(r => r.json())
-    .then(d => {
-      if (d && typeof d.stargazers_count === "number") {
-        document.getElementById("gh-proof").innerHTML =
-          '&#9733; ' + d.stargazers_count + ' on <a href="https://github.com/agentleadengine/cronus-agent" style="color:var(--muted)">GitHub</a> · MIT licensed · no account required';
-      }
-    }).catch(() => {});
 
   document.querySelectorAll(".copy").forEach(b => b.addEventListener("click", () => {
     navigator.clipboard.writeText(b.parentElement.querySelector("code").innerText);
