@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Claude - Cronus Agent docs</title>
+<meta name="description" content="What Claude Code is in the Cronus stack: the engineering heavyweight that plans, edits, runs, and verifies real work on your machine.">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <nav class="links">
+      <a href="index.html#install">Install</a>
+      <a href="docs.html" class="here">Docs</a>
+      <a href="mission.html">Mission</a>
+      <a href="https://github.com/agentleadengine/cronus-agent">GitHub</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="docs.html">Docs</a> · The agents</div>
+  <h1 style="color:var(--claude)">Κ <span style="color:var(--ivory)">Claude</span></h1>
+  <p class="lede">The heavyweight. Claude Code is Anthropic's engineering agent: hand it a hard, multi-step job and it plans, does the work on your machine, checks its own results, and reports back.</p>
+
+  <h2 class="first">What it is</h2>
+  <p>Claude Code is the agent form of Anthropic's Claude models - widely considered the strongest agent there is for code and deep, careful work. It does not just suggest; it operates: reads and edits files, runs commands, fixes what broke, and keeps going until the job meets the goal or it can honestly say why not.</p>
+  <p>In the Cronus stack it is the deep-work specialist. When your request is "build this", "fix this", or "figure out why this is broken", Cronus routes it to Claude as a background job you can watch.</p>
+
+  <h2>What it is good at</h2>
+  <ul>
+    <li><b>Code, end to end.</b> New features, bug hunts, refactors - it plans the change, makes it, and verifies it.</li>
+    <li><b>Multi-step problems.</b> Work with ten dependent steps where each depends on the last - the kind of job that falls apart in a normal chat.</li>
+    <li><b>Careful reasoning.</b> Contracts, tricky analysis, anything where being roughly right is not good enough.</li>
+    <li><b>Honest limits.</b> When it cannot finish, it says what it tried and where it stopped - which is worth more than confident nonsense.</li>
+  </ul>
+
+  <h2>What it costs</h2>
+  <p>Claude Code uses your Claude subscription - one monthly price, not per word. Heavy use can hit plan limits, which reset on a schedule. In Cronus you sign in once, and the model cards in Setup explain the costs in plain words before you connect anything.</p>
+
+  <h2>The three agents, one desk</h2>
+  <p><b><a href="hermes.html">Hermes</a> learns your work and writes its own skills. <a href="openclaw.html">OpenClaw</a> arrives skilled, with a market of thousands more. Claude is the heavyweight you call for the hardest jobs.</b> Cronus routes each request to whichever fits, or you open any of them directly from the dock.</p>
+
+  <h2>Do I need it?</h2>
+  <p>No - but it is the strongest single upgrade. Without it, Cronus leans on your other agents and models; with it, the hardest work on your desk has a specialist.</p>
+
+  <div class="nextprev">
+    <a href="docs.html">&larr; All docs</a>
+    <a href="hermes.html">Next: Hermes &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent · MIT licensed · <a href="https://github.com/agentleadengine/cronus-agent">github.com/agentleadengine/cronus-agent</a></div>
+</footer>
+
+</body>
+</html>

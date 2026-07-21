@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hermes - Cronus Agent docs</title>
-<meta name="description" content="What Hermes is, what it is good at, and how Cronus works with it.">
+<meta name="description" content="What Hermes is: the self-improving agent by Nous Research that creates its own skills from experience and gets better the longer it runs.">
 <link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -29,38 +29,38 @@
 <main class="page">
   <div class="crumb"><a href="docs.html">Docs</a> · The agents</div>
   <h1 style="color:var(--hermes)">Η <span style="color:var(--ivory)">Hermes</span></h1>
-  <p class="lede">The learner. Hermes is an agent that grows around you: teach it a skill once and it keeps it forever, remembers what worked, and gets better at your work every time it runs.</p>
+  <p class="lede">The agent that grows with you. Hermes does not just complete tasks - it learns from them: it writes its own skills from experience, improves them as it works, and builds a deepening picture of how you like things done.</p>
 
   <h2 class="first">What it is</h2>
-  <p>Hermes is a separate open agent program that Cronus connects to. What makes it different from every chat tool you have used: <b>it learns</b>. Hermes has a skill system - teachable playbooks that encode how YOU do things - and its own long-term memory. Show it your way of writing a follow-up or running a weekly routine once, and that becomes a permanent ability it applies on every future run.</p>
-  <p>It also carries its own toolkit (email, browsing, files, calendars, whatever you connect through MCP), so a learned skill is not just knowledge - it is something Hermes can actually go do.</p>
-  <p>Cronus does not replace Hermes or wrap it in a cage. It just gives Hermes a desk: a window to talk to it directly, a router that hands it jobs that fit, and a health check that tells you honestly whether it is installed and working.</p>
+  <p>Hermes is an open-source, self-improving agent built by <a href="https://github.com/nousresearch/hermes-agent">Nous Research</a>, and it is the only major agent with a true <b>built-in learning loop</b>. When Hermes finishes a job, it can turn what it did into a reusable skill - a written playbook it keeps forever. Next time similar work comes up, it draws on that skill and executes faster and better. It also remembers across sessions: it searches its own past conversations and builds a model of who you are and how you work.</p>
+  <p>It runs on your machine (or any server you own), stores everything locally, and carries a serious toolkit: web browsing and search, files, scheduled automations, subagents it can spawn for parallel work, and any tool you connect through MCP.</p>
+
+  <h2>Why that matters</h2>
+  <div class="why">
+    <div class="t">Every AI tool is smart on day one. Almost none are smarter on day thirty.</div>
+    <p>A normal assistant starts from zero every morning. Hermes compounds: the skills it wrote last week, the lessons it kept, the picture of you it has built - all of it is loaded and working on day thirty-one. Compounding is the difference between a toy and a coworker.</p>
+  </div>
 
   <h2>What it is good at</h2>
   <ul>
-    <li><b>Learning your skills.</b> A skill is a written playbook for a job - your voice rules for emails, your steps for a weekly report. Add one and Hermes follows it, every time, without being reminded.</li>
-    <li><b>Getting better with use.</b> Its memory keeps the lessons from every run, so the tenth campaign genuinely beats the first. (See <a href="hindsight.html">how memory works</a>.)</li>
-    <li><b>Outreach, email, and routines</b> - the work it most commonly carries: drafting, follow-ups, multi-step recurring jobs.</li>
-    <li><b>Tool-heavy tasks</b> - it speaks MCP, the open standard for connecting AI to outside tools, so its reach grows with whatever you plug in.</li>
+    <li><b>Work you repeat.</b> Outreach, follow-ups, reports, weekly routines - anything you do more than once is exactly where a learning agent pulls ahead, because run ten is built on runs one through nine.</li>
+    <li><b>Learning YOUR way.</b> Skills are not generic: they encode how you write, what you consider done, which steps your business actually uses. Teach it once, or let it learn by doing.</li>
+    <li><b>Long-running projects.</b> Because it remembers across sessions, Hermes can carry multi-week work without losing the thread.</li>
+    <li><b>Skills you can inspect and share.</b> Its skills are portable files, compatible with the open agent-skills format, shareable through a community skills hub.</li>
   </ul>
-  <div class="why">
-    <div class="t">Why learning matters more than raw smarts</div>
-    <p>Every AI tool is smart on day one. Almost none are smarter on day thirty. An agent that accumulates your skills and your lessons compounds - and compounding is the difference between a toy and a coworker.</p>
-  </div>
 
   <h2>How Cronus uses it</h2>
-  <p>Two ways, same as every agent:</p>
   <ul>
-    <li><b>Routed.</b> Ask Cronus for something outreach-shaped ("draft a follow-up for the leads that never replied") and it will usually pick Hermes, tell you so, and run the job in the background while you do other things.</li>
-    <li><b>Direct.</b> Click the cyan Η chip in the dock. What you type goes straight to Hermes, and its output streams into the window live.</li>
+    <li><b>Routed.</b> Ask Cronus for something outreach- or routine-shaped and it will usually pick Hermes, tell you so, and run the job in the background.</li>
+    <li><b>Direct.</b> Click the cyan Η chip in the dock and talk straight to Hermes in its own window, output streaming live.</li>
   </ul>
-  <div class="why">
-    <div class="t">Why is the first Hermes reply slow?</div>
-    <p>Each fresh conversation, Hermes boots its full toolkit: every tool connection, its memory, its skills. That can take a minute. It is the price of an agent that arrives fully equipped rather than one that fakes readiness. Making this faster is on the roadmap.</p>
-  </div>
+  <p>Fair warning on speed: each fresh conversation, Hermes boots its full toolkit - tools, memory, skills. The first reply can take a minute. That is the cost of an agent that shows up fully loaded, and making it faster is on the roadmap.</p>
+
+  <h2>Hermes vs OpenClaw, in one line</h2>
+  <p><b>Hermes writes its own skills by learning from your work. <a href="openclaw.html">OpenClaw</a> imports ready-made skills from a community market of thousands.</b> They are complementary, which is exactly why Cronus gives you both on one desk.</p>
 
   <h2>Do I need it?</h2>
-  <p>No. Cronus works with whatever agents you have. If Hermes is not installed, its dock chip shows a gray dot and everything else works normally. If you want it, the setup wizard's health check will point you at what is missing.</p>
+  <p>No. Cronus works with whatever agents you have; without Hermes, its dock chip just shows an honest gray dot. If you want it, it is free, open source, and the setup wizard's health check points you at what is missing.</p>
 
   <div class="nextprev">
     <a href="docs.html">&larr; All docs</a>
