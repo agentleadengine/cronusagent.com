@@ -132,6 +132,34 @@
   }
   .note b { color: var(--ivory); }
 
+  /* screenshots */
+  .shot { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--panel); box-shadow: 0 24px 70px rgba(0,0,0,.5); }
+  .shot img { display: block; width: 100%; height: auto; }
+  .shotcap { font-size: 13px; color: var(--dim); margin-top: 10px; text-align: center; }
+  .seeit { margin-top: 64px; }
+
+  /* how it works */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .stepcard { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
+  .stepcard .n { font: italic 600 30px var(--serif); color: var(--dim); display: block; margin-bottom: 8px; }
+  .stepcard h3 { font: 600 16px var(--sans); margin-bottom: 7px; }
+  .stepcard p { font-size: 14px; color: var(--muted); margin: 0; }
+  .stepcard code { font: 12px var(--mono); background: #050505; border: 1px solid var(--line); border-radius: 6px; padding: 2px 6px; }
+
+  /* example asks */
+  .asks { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 12px; }
+  .ask { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; }
+  .ask .q { font: italic 500 16.5px "Newsreader", var(--serif); color: var(--ivory); margin-bottom: 8px; }
+  .ask .a { font-size: 13px; color: var(--muted); }
+  .ask .a b { font-weight: 700; }
+
+  /* learn-more cards */
+  .learn { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; }
+  .learn a { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; text-decoration: none; transition: border-color .15s, transform .12s; }
+  .learn a:hover { border-color: var(--muted); transform: translateY(-2px); }
+  .learn .lt { font: 600 14.5px var(--sans); margin-bottom: 4px; }
+  .learn p { font-size: 13px; color: var(--muted); margin: 0; }
+
   footer { border-top: 1px solid var(--line); padding: 36px 0 60px; color: var(--dim); font-size: 13px; }
   footer a { color: var(--muted); }
   @media (max-width: 640px) { .hero { padding-top: 64px; } section { padding: 52px 0; } }
@@ -168,6 +196,44 @@
     </div>
   </div>
 </div>
+
+<section class="seeit" style="border-top:none;padding-top:0">
+  <div class="wrap">
+    <figure class="shot"><img src="shot-dashboard.jpg" alt="The Cronus dashboard: sidebar of pages on the left, chat with Cronus in the middle, agent dock at the bottom right" loading="lazy"></figure>
+    <div class="shotcap">The actual app. Chat in the middle, every page in the sidebar, your agents docked at the bottom right.</div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <p class="sub">Three steps, no accounts, free to run.</p>
+    <div class="steps">
+      <div class="stepcard"><span class="n">1</span><h3>Install it</h3><p>One command (or the desktop app). Cronus runs on your computer and opens as a normal window. Nothing is uploaded anywhere.</p></div>
+      <div class="stepcard"><span class="n">2</span><h3>Give it a brain</h3><p>Connect at least one AI model. The free path is a local model via Ollama: <code>ollama pull qwen3:4b</code>. Have a Claude plan? Sign in and use that instead.</p></div>
+      <div class="stepcard"><span class="n">3</span><h3>Ask for things</h3><p>Type what you want in plain words. Cronus answers, or hands the job to the right agent and shows you the work as it happens.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="asks">
+  <div class="wrap">
+    <h2>What you can actually ask it</h2>
+    <p class="sub">Real examples, and who ends up doing the work.</p>
+    <div class="asks">
+      <div class="ask"><div class="q">"Draft a follow-up for the leads that never replied."</div><div class="a">Routed to <b style="color:var(--hermes)">Hermes</b>, the outreach agent. It drafts; you approve.</div></div>
+      <div class="ask"><div class="q">"Fix the login bug in my project."</div><div class="a">Routed to <b style="color:var(--claude)">Claude</b>, the coding agent, as a background job you can watch.</div></div>
+      <div class="ask"><div class="q">"Log into the portal and download June's invoice."</div><div class="a">Routed to <b style="color:var(--openclaw)">OpenClaw</b>, which drives a real browser, click by click.</div></div>
+      <div class="ask"><div class="q">"Here are 20 messy lead notes. Who do I call first?"</div><div class="a">The <b>Leads</b> page ranks them with a reason and talking points for each.</div></div>
+      <div class="ask"><div class="q">"What's due today?"</div><div class="a"><b>Cronus</b> answers directly from your connected to-do list, right in chat.</div></div>
+      <div class="ask"><div class="q">"Every morning at 8, summarize my inbox."</div><div class="a">Becomes a <b>Scheduled Run</b>, a job on a timer that works while you sleep.</div></div>
+    </div>
+    <div style="margin-top:34px">
+      <figure class="shot"><img src="shot-agent-window.jpg" alt="A direct-line window to the Claude agent, opened from the dock" loading="lazy"></figure>
+      <div class="shotcap">Skip the routing whenever you want: click an agent in the dock and talk to it directly in its own window.</div>
+    </div>
+  </div>
+</section>
 
 <section id="what">
   <div class="wrap">
@@ -259,6 +325,21 @@ ollama pull qwen3:4b</code><button class="copy">copy</button></pre>
     </div>
 
     <div class="note"><b>Honest note about installers:</b> prebuilt installers are currently unsigned, so Windows SmartScreen and some antivirus tools will warn or quarantine until you allow them. That is a signing-certificate formality, not a judgment of the code, which is fully open source and reviewable on GitHub. Installing from source (step 1) avoids the warnings entirely. Code signing is on the roadmap.</div>
+  </div>
+</section>
+
+<section id="learn">
+  <div class="wrap">
+    <h2>Learn more</h2>
+    <p class="sub">Short reads, written for people, not developers.</p>
+    <div class="learn">
+      <a href="docs.html"><div class="lt">Getting started</div><p>Your first five minutes, step by step.</p></a>
+      <a href="hermes.html"><div class="lt" style="color:var(--hermes)">Hermes</div><p>The doer: outreach, email, routines.</p></a>
+      <a href="openclaw.html"><div class="lt" style="color:var(--openclaw)">OpenClaw</div><p>The one with hands: browser missions.</p></a>
+      <a href="hindsight.html"><div class="lt">Memory</div><p>Why your agents remember you next week.</p></a>
+      <a href="ai-basics.html"><div class="lt">AI words, translated</div><p>Tokens, models, and jargon in plain English.</p></a>
+      <a href="why.html"><div class="lt">Why use Cronus</div><p>The honest case, trade-offs included.</p></a>
+    </div>
   </div>
 </section>
 
