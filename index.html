@@ -5,6 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cronus Agent - your agents, one desk</title>
 <meta name="description" content="Cronus Agent is a local-first desktop app that puts all your AI agents on one desk: chat with Cronus, and open Hermes, Claude, and OpenClaw as their own windows.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Cronus Agent - your agents, one desk">
+<meta property="og:description" content="Cronus Agent is a local-first desktop app that puts all your AI agents on one desk: chat with Cronus, and open Hermes, Claude, and OpenClaw as their own windows.">
+<meta property="og:url" content="https://cronusagent.com/">
+<meta property="og:image" content="https://cronusagent.com/shot-dashboard.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -340,6 +347,7 @@
     <h2>Install</h2>
     <p class="sub">Two minutes from zero to the dashboard. You need git and Python 3.11 or newer; everything else installs itself on first run.</p>
 
+    <p class="sub" style="margin-top:-18px">Works on macOS, Windows, and Linux. For the free local model: 8 GB of RAM works, 16 GB is comfortable. The installers need nothing else; installing from source needs git and Python 3.11+.</p>
     <div class="gate" id="gate-box">
       <div class="gk">Alpha Release</div>
       <p>Cronus is in early alpha. Installation is open to alpha testers only for now - enter your access code to see the install steps.</p>
@@ -348,6 +356,7 @@
         <button id="gate-go">Unlock</button>
       </div>
       <p class="err" id="gate-err"></p>
+      <p style="margin-bottom:0;margin-top:4px">No code yet? <a href="https://github.com/agentleadengine/cronus-agent/issues/new?title=Alpha%20access%20request">Open a short intro on GitHub</a> and we will send you one.</p>
     </div>
     <div id="install-content">
     <div class="tabs">
@@ -421,6 +430,32 @@ ollama pull qwen3:4b</code><button class="copy">copy</button></pre>
 
     <div class="note"><b>Honest note about installers:</b> prebuilt installers are currently unsigned, so Windows SmartScreen and some antivirus tools will warn or quarantine until you allow them. That is a signing-certificate formality, not a judgment of the code, which is fully open source and reviewable on GitHub. Installing from source (step 1) avoids the warnings entirely. Code signing is on the roadmap.</div>
   </div>
+  </div>
+</section>
+
+<section id="status">
+  <div class="wrap">
+    <h2>Alpha, honestly</h2>
+    <p class="sub">You are early. Here is the truthful state of the software, kept current so nobody installs on false pretenses.</p>
+    <div class="grid">
+      <div class="card"><h3>Working today</h3><p>Chat with routing, the agent dock with direct windows, free local models plus GLM, Claude, Gemini, and OpenRouter, memory via Hindsight, Orchestra context weaving, the n8n automations builder, and installers for all three OSes.</p></div>
+      <div class="card"><h3>Rough edges</h3><p>Replies arrive whole rather than streaming word by word. Hermes takes a minute to boot per conversation. Installers are unsigned, so antivirus tools grumble. All three are being worked on right now.</p></div>
+      <div class="card"><h3>Coming next</h3><p>Streaming replies, signed installers, faster agent startup, and a public release once those land. New versions ship as installers you choose to run - Cronus never updates itself.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <h2>Questions people actually ask</h2>
+    <div class="grid" style="max-width:900px;margin:0 auto">
+      <div class="card"><h3>Is it free?</h3><p>The software is free and open source (MIT). With a local model the whole thing costs nothing. Cloud models bill through your own accounts, on your own terms - Cronus never touches your money.</p></div>
+      <div class="card"><h3>Is my data private?</h3><p>Cronus runs on your machine, has no account system, and sends no telemetry. The only thing that ever leaves is a message you route to a cloud model, and it goes straight to that provider, nowhere else.</p></div>
+      <div class="card"><h3>What do I need?</h3><p>A reasonably modern computer on macOS, Windows, or Linux. 8 GB of RAM runs the free local model; 16 GB is comfortable. No accounts, no card.</p></div>
+      <div class="card"><h3>Do I need all three agents?</h3><p>No. Cronus works with whatever you have installed and shows an honest gray dot for the rest. Start with just the free local model and add agents when you want them.</p></div>
+      <div class="card"><h3>Can I uninstall it cleanly?</h3><p>Yes, and we tell you how: delete the app, then two folders in your home directory. No leftovers, no lurking services, no "are you sure" retention tricks.</p></div>
+      <div class="card"><h3>How do I get an alpha code?</h3><p><a href="https://github.com/agentleadengine/cronus-agent/issues/new?title=Alpha%20access%20request">Open a short intro on GitHub</a> - who you are and what you want to use it for. That is the whole application.</p></div>
+    </div>
   </div>
 </section>
 
