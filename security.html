@@ -33,7 +33,7 @@
       <a href="guides.html">Guides</a>
       <a href="mission.html">Mission</a>
       <a href="get-cronus.html">Get Cronus</a>
-      <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a>
+      <a href="request-access.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -82,6 +82,16 @@
     <li><b>Never on a computer your employer owns.</b> Their IT department is not part of this alpha.</li>
   </ul>
 
+  <h2>How the app itself is built</h2>
+  <p>Beyond how you use it, the software has its own defenses, and we audit them. The most recent full audit of the codebase was July 21, 2026. In plain words:</p>
+  <ul>
+    <li><b>Local only.</b> The backend listens on your own machine (127.0.0.1) and nowhere else. There is no Cronus cloud, no account, and no telemetry: we cannot see your data because it never reaches us.</li>
+    <li><b>Websites cannot reach it.</b> A malicious page you visit cannot send commands to your Cronus: requests are checked for where they came from, and anything cross-origin is rejected.</li>
+    <li><b>Keys are encrypted at rest.</b> The credential vault encrypts every secret on disk, never shows a saved value again, and never puts one into an AI prompt.</li>
+    <li><b>Escalations need explicit consent.</b> Loosening an agent's permissions requires a deliberate confirmation. Nothing switches itself to a more powerful mode.</li>
+    <li><b>Updates are your call.</b> The app checks for updates only when you click the button, and installing one is always a choice you make.</li>
+  </ul>
+
   <h2>What Cronus cannot protect you from</h2>
   <p>Honesty is the policy, so here is the other column:</p>
   <ul>
@@ -104,7 +114,7 @@
 </main>
 
 <footer>
-  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a></div>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
 </footer>
 
 <script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>

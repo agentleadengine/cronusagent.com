@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog - Cronus Agent</title>
+<meta name="description" content="What shipped in Cronus and when, in plain words. The same history the app's Updates panel checks against.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Changelog - Cronus Agent">
+<meta property="og:description" content="What shipped in Cronus and when, in plain words.">
+<meta property="og:url" content="https://cronusagent.com/changelog.html">
+<meta property="og:image" content="https://cronusagent.com/guide-getting-started-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+<style>
+  .rel { border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; margin-bottom: 18px; background: var(--panel); }
+  .rel .rh { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .rel .rv { font-size: 19px; font-weight: 700; }
+  .rel .rd { font-size: 12.5px; color: var(--dim); }
+  .rel ul { margin: 0 0 0 18px; }
+  .rel li { margin-bottom: 6px; font-size: 14px; }
+  .rel .tag { font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; border: 1px solid var(--line); border-radius: 999px; padding: 2px 9px; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html">Guides</a>
+      <a href="use-cases.html">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page" style="max-width:720px">
+  <div class="crumb"><a href="index.html">Cronus</a> · Changelog</div>
+  <h1>Changelog</h1>
+  <p class="lede">What shipped and when, in plain words. The app never updates itself: it checks this site only when you click "Check for updates", and installing a new version is always your call.</p>
+
+  <div class="rel">
+    <div class="rh"><span class="rv">0.2.1</span><span class="rd">July 21, 2026</span><span class="tag">current</span></div>
+    <ul>
+      <li>Composer @-mentions: start a message with @hermes, @claude, or @openclaw to skip the router and talk straight to that agent.</li>
+      <li>Prompt Rater on the composer: strict A to F grades, judged before you send, with reasons that explain themselves.</li>
+      <li>Fix it for me: an A-standard rewrite of your prompt that you approve before it sends.</li>
+      <li>Drafts survive restarts.</li>
+      <li>New look across the whole app: layered dark surfaces, one gold accent, icons in the navigation, and a proper welcome screen. Same features, easier on the eyes.</li>
+      <li>Security fixes from a full audit of the codebase, plus two repaired pages (conversation Log and Files) that broke during an earlier cleanup.</li>
+      <li>All seventeen site videos re-recorded on the new design.</li>
+    </ul>
+  </div>
+
+  <div class="rel">
+    <div class="rh"><span class="rv">0.2.0</span><span class="rd">July 20, 2026</span></div>
+    <ul>
+      <li>First locked installers: signed-code-free downloads for macOS, Windows, and Linux, protected by your alpha access code.</li>
+      <li>cronusagent.com launched, with the guide video series and written docs.</li>
+      <li>Foresight: reads your agents' memory for repeated manual work and proposes automations, with honest confidence labels.</li>
+      <li>Usage budget: a monthly dollar cap where only real per-token spend counts.</li>
+      <li>Tool Health, Safety audits, and the approvals queue in one Watch section.</li>
+    </ul>
+  </div>
+
+  <div class="rel">
+    <div class="rh"><span class="rv">Earlier alphas</span><span class="rd">July 2026</span></div>
+    <ul>
+      <li>The desktop app itself: an Electron shell that starts the local backend and opens the dashboard as a real application.</li>
+      <li>Oracle chat with honest routing, the agent dock and windows, Orchestra, Files, Memory on Hindsight, Local Models through Ollama, the setup wizard, and the credential vault.</li>
+    </ul>
+  </div>
+
+  <p style="font-size:13px;color:var(--dim)">Running an older version? Open Updates inside the app and click "Check for updates", or grab the latest installer from <a href="get-cronus.html">Get Cronus</a>.</p>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+</body>
+</html>

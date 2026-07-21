@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cronus for real estate brokerages - Cronus Agent</title>
+<meta name="description" content="What a Cronus setup is built to do inside a brokerage: past-client re-engagement drafts, listing copy in your voice, cited answers from transaction files, and an office brain you own.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Cronus for real estate brokerages">
+<meta property="og:description" content="Past-client re-engagement drafts, listing copy in your voice, cited answers from transaction files, and an office brain you own.">
+<meta property="og:url" content="https://cronusagent.com/for-brokerages.html">
+<meta property="og:image" content="https://cronusagent.com/guide-memory-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html">Guides</a>
+      <a href="use-cases.html" class="here">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="use-cases.html">Use cases</a> · Real estate brokerages</div>
+  <h1>Cronus at a brokerage</h1>
+  <p class="lede">This page describes what a Cronus setup is built to do inside a brokerage or team office. It is not a case study and we will not invent one. Read it and judge whether the work it describes looks like your Tuesday.</p>
+
+  <h2 class="first">8:00 - the office brief</h2>
+  <p>A scheduled run writes the morning picture: which re-engagement drafts are waiting for review, what came in overnight, which listings changed, and anything that broke and needs a person. One short read instead of a walk through every open tab in the office.</p>
+
+  <h2>9:00 - the database, revived</h2>
+  <p>Most brokerages sit on years of past clients nobody has spoken to since closing. Cronus routes that work to Hermes: short, personal check-in drafts for the slice of the database you pick, written in your voice, one per person. Every draft waits for a human to read and send it. Nothing mass-blasts your past clients, because that is how you burn a database instead of reviving it.</p>
+
+  <h2>10:30 - listing copy</h2>
+  <p>Feed it the details and photos notes for the new listing and ask for copy. It drafts the description in the office voice, you fix the two sentences that need an agent's judgment, and it is done. The style memory means the third listing sounds like the first without re-explaining anything.</p>
+
+  <h2>1:00 - the transaction file question</h2>
+  <p>An agent needs to know what the inspection contingency deadline is on the Maple Street file. The contracts you have dropped into <a href="guide-files.html">Files</a> are searchable, and answers come back citing the document and section they came from. The agent reads the source line before acting on it. For dates and dollar amounts, checkable beats fast.</p>
+
+  <h2>3:00 - new agent, same questions</h2>
+  <p>Your onboarding docs, commission policy, and SOPs live in Files too. The new agent asks Cronus instead of interrupting your ops person for the ninth time, and gets answers that cite the actual policy document. Your ops person gets their afternoon back.</p>
+
+  <h2>The part that matters most</h2>
+  <div class="why">
+    <div class="t">The office brain stays in the office</div>
+    <p>Agents leave. Vendors change prices. Portals change rules. Everything Cronus holds runs on machines you own: the database work, the drafts, the memory of how your office operates. When something outside your walls changes, you switch models from a dropdown and keep working. Nobody can take the brain with them, and nobody can rent it back to you.</p>
+  </div>
+
+  <h2>What this is not</h2>
+  <p>Cronus does not send messages to your clients by itself, does not scrape portals against their rules, and does not replace your ops person or your agents. It drafts, summarizes, watches, and remembers. People decide. Anyone promising you an office that runs itself is selling you the demo, not the Tuesday.</p>
+
+  <div class="cta" style="margin-top:28px">
+    <a class="btn solid" href="https://calendly.com/agentleadengine/meet-with-sam">Book a 15 minute walkthrough</a>
+    <a class="btn ghost" href="request-access.html">Request alpha access</a>
+  </div>
+
+  <div class="nextprev">
+    <a href="for-insurance.html">&larr; For insurance agencies</a>
+    <a href="use-cases.html">All use cases &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+</body>
+</html>

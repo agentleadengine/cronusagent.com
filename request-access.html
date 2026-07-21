@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request alpha access - Cronus Agent</title>
+<meta name="description" content="Tell us who you are and what you want Cronus to do. We reply within one business day with an access code or an honest reason why not yet.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Request alpha access - Cronus Agent">
+<meta property="og:description" content="Tell us who you are and what you want Cronus to do. We reply within one business day.">
+<meta property="og:url" content="https://cronusagent.com/request-access.html">
+<meta property="og:image" content="https://cronusagent.com/guide-getting-started-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+<style>
+  .af { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; margin-top: 18px; }
+  .af label { display: block; font-size: 13px; font-weight: 600; margin: 14px 0 6px; }
+  .af label:first-child { margin-top: 0; }
+  .af input, .af select, .af textarea {
+    width: 100%; box-sizing: border-box; background: var(--bg); color: var(--ink);
+    border: 1px solid var(--line); border-radius: 9px; padding: 10px 12px;
+    font: 14px/1.5 Inter, sans-serif;
+  }
+  .af textarea { min-height: 110px; resize: vertical; }
+  .af input:focus, .af select:focus, .af textarea:focus { outline: none; border-color: var(--muted); }
+  .af .send-row { display: flex; align-items: center; gap: 14px; margin-top: 18px; flex-wrap: wrap; }
+  .af .status { font-size: 13px; color: var(--muted); }
+  .af .status.ok { color: #3ecf8e; }
+  .af .status.err { color: #e46962; }
+  .af .fineprint { font-size: 12px; color: var(--dim); margin-top: 14px; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html">Guides</a>
+      <a href="use-cases.html">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html" class="here">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page" style="max-width:640px">
+  <div class="crumb"><a href="index.html">Cronus</a> · Request access</div>
+  <h1>Request alpha access</h1>
+  <p class="lede">Tell us who you are and what you want Cronus to do. A person reads every request and replies within one business day, with an access code or with an honest "not yet" and the reason.</p>
+
+  <div class="af">
+    <form id="alpha-form">
+      <label for="af-name">Your name</label>
+      <input id="af-name" type="text" autocomplete="name" required>
+
+      <label for="af-email">Email</label>
+      <input id="af-email" type="email" autocomplete="email" required>
+
+      <label for="af-biz">What kind of business</label>
+      <select id="af-biz">
+        <option>Insurance agency</option>
+        <option>Real estate brokerage or team</option>
+        <option>Consultant or agency owner</option>
+        <option>Builder or developer</option>
+        <option>Something else</option>
+      </select>
+
+      <label for="af-msg">What do you want it to do?</label>
+      <textarea id="af-msg" placeholder="Plain words are perfect. For example: I run a 4-person agency and I want renewal follow-ups drafted without hiring another CSR." required></textarea>
+
+      <div class="send-row">
+        <button type="submit" class="btn solid" id="af-send">Send request</button>
+        <span class="status" id="af-status"></span>
+      </div>
+      <p class="fineprint">This sends your note to Agent Lead Engine LLC so we can reply to you. No newsletter, no drip sequence, no sharing your info. Prefer email? <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">agentleadengine@gmail.com</a> works too. Rather talk? <a href="https://calendly.com/agentleadengine/meet-with-sam">Book 15 minutes</a>.</p>
+    </form>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>
+fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});
+
+(function(){
+  var RECAPTCHA_KEY = "6LeDBFwpAAAAAJe8ux9-imrqZ2ueRsEtdiWoDDpX";
+  var CRM_FORM_ID = "ibrpskCPi4BSwcVLiouZ";
+  var CRM_LOCATION = "DmvEowZuVydz83uIqSti";
+
+  var recaptchaReady = new Promise(function(res, rej){
+    var sc = document.createElement("script");
+    sc.src = "https://www.google.com/recaptcha/api.js?render=" + RECAPTCHA_KEY;
+    sc.onload = function(){ grecaptcha.ready(res); };
+    sc.onerror = rej;
+    document.head.appendChild(sc);
+  });
+
+  document.getElementById("alpha-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    var btn = document.getElementById("af-send");
+    var status = document.getElementById("af-status");
+    var name = document.getElementById("af-name").value.trim();
+    var email = document.getElementById("af-email").value.trim();
+    var biz = document.getElementById("af-biz").value;
+    var msg = document.getElementById("af-msg").value.trim();
+    if (!name || !email || !msg) return;
+
+    btn.disabled = true;
+    status.className = "status";
+    status.textContent = "sending…";
+
+    var parts = name.split(/\s+/);
+    var summary = "CRONUS ALPHA REQUEST\nBusiness: " + biz + "\n\n" + msg;
+
+    recaptchaReady.then(function(){
+      return grecaptcha.execute(RECAPTCHA_KEY, { action: "submit" });
+    }).then(function(token){
+      var fields = {
+        first_name: parts[0],
+        last_name: parts.slice(1).join(" ") || "-",
+        email: email,
+        message: summary,
+        formId: CRM_FORM_ID,
+        location_id: CRM_LOCATION
+      };
+      var body = new FormData();
+      body.append("formData", JSON.stringify(fields));
+      body.append("locationId", CRM_LOCATION);
+      body.append("formId", CRM_FORM_ID);
+      body.append("captchaV3", token);
+      return fetch("https://backend.leadconnectorhq.com/forms/submit?formId=" + CRM_FORM_ID + "&locationId=" + CRM_LOCATION, { method: "POST", body: body });
+    }).then(function(r){
+      if (!r.ok) throw new Error("submit failed");
+      status.className = "status ok";
+      status.textContent = "Sent. You will hear from a person within one business day.";
+      document.getElementById("alpha-form").reset();
+      btn.disabled = false;
+    }).catch(function(){
+      status.className = "status err";
+      status.innerHTML = 'That did not go through. Please email us instead: <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">agentleadengine@gmail.com</a>';
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+</body>
+</html>

@@ -33,7 +33,7 @@
       <a href="guides.html">Guides</a>
       <a href="mission.html">Mission</a>
       <a href="get-cronus.html">Get Cronus</a>
-      <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a>
+      <a href="request-access.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -42,6 +42,17 @@
   <div class="crumb"><a href="docs.html">Docs</a> · Use cases</div>
   <h1>What a week looks like</h1>
   <p class="lede">Features are abstract. Here are three honest pictures of Cronus doing a week of real work. Every capability mentioned exists today; the people are composites, not testimonials.</p>
+
+  <div class="cards" style="grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin:22px 0 6px">
+    <a class="gcard" href="for-insurance.html" style="display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;text-decoration:none">
+      <h3 style="margin:0 0 5px">Insurance agencies</h3>
+      <p style="font-size:13px;color:var(--muted);margin:0">Renewal follow-up drafts, cited answers from dec pages, and a book that stays yours. The full day, hour by hour.</p>
+    </a>
+    <a class="gcard" href="for-brokerages.html" style="display:block;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px 20px;text-decoration:none">
+      <h3 style="margin:0 0 5px">Real estate brokerages</h3>
+      <p style="font-size:13px;color:var(--muted);margin:0">Database revival drafts, listing copy in your voice, and transaction file answers that cite their source.</p>
+    </a>
+  </div>
 
   <h2 class="first">The consultant</h2>
   <p>Monday morning she asks one question: <b>"what did my agents do overnight?"</b> Cronus reads the activity log and gives her the rundown - the scheduled run fired, two follow-up drafts are waiting for approval.</p>
@@ -73,7 +84,7 @@
 </main>
 
 <footer>
-  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a></div>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
 </footer>
 
 <script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>

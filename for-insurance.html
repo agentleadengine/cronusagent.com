@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cronus for insurance agencies - Cronus Agent</title>
+<meta name="description" content="What a Cronus setup is built to do inside an independent insurance agency: renewal follow-up drafts, cited answers from policy documents, a morning brief, and a book of business that stays yours.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Cronus for insurance agencies">
+<meta property="og:description" content="Renewal follow-up drafts, cited answers from policy documents, a morning brief, and a book that stays yours.">
+<meta property="og:url" content="https://cronusagent.com/for-insurance.html">
+<meta property="og:image" content="https://cronusagent.com/guide-files-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html">Guides</a>
+      <a href="use-cases.html" class="here">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="use-cases.html">Use cases</a> · Insurance agencies</div>
+  <h1>Cronus at an independent agency</h1>
+  <p class="lede">This page describes what a Cronus setup is built to do inside an agency. It is not a case study and we will not invent one. It is the honest picture of the tool doing agency work, so you can judge whether it fits yours.</p>
+
+  <h2 class="first">8:00 - the morning brief</h2>
+  <p>A scheduled run reads what your agents did overnight and writes you a short brief: which follow-up drafts are waiting for review, which renewal dates moved into the 90, 60, and 30 day windows, and anything that failed and needs a person. You read it with your coffee instead of reconstructing it from six tabs.</p>
+
+  <h2>9:00 - renewal follow-ups, drafted</h2>
+  <p>Cronus routes drafting work to Hermes: renewal touch messages for the accounts entering their windows, in your agency's voice, one per account. Every one of them lands as a draft. A person reads it, edits it or not, and sends it from your own systems. Cronus does not send client messages by itself, and we set it up that way on purpose. Your compliance rules stay your compliance rules.</p>
+
+  <h2>10:30 - the dec page question</h2>
+  <p>A client calls asking what their wind deductible is. The dec pages and policy documents you have dropped into <a href="guide-files.html">Files</a> are searchable, and the answer comes back citing the exact document and section it came from. You read the source before you repeat it to the client. Checkable answers are the point, not fast ones.</p>
+
+  <h2>1:00 - quote follow-up</h2>
+  <p>The quotes that went out last week have a scheduled check: which ones got no reply, which ones are past the carrier's rate guarantee window. The follow-up drafts wait in the same review queue as everything else. Nothing chases a prospect without a person deciding it should.</p>
+
+  <h2>3:00 - tomorrow's call list</h2>
+  <p>Ask Oracle to pull together tomorrow's calls: monoline accounts worth a cross-sell conversation, renewals that got no response to the first touch, the new leads that came in today. It assembles the list and the context for each name, and you decide who actually gets called.</p>
+
+  <h2>The part that matters most</h2>
+  <div class="why">
+    <div class="t">Your book stays yours</div>
+    <p>Everything above runs on a computer you own. The client data, the drafts, the memory of how your agency works: all of it lives on your machine, not on our servers or anyone else's platform. If a vendor raises prices or shuts down, you switch models from a dropdown and keep working. No one can hold your book of business hostage, including us.</p>
+  </div>
+
+  <h2>What this is not</h2>
+  <p>Cronus does not auto-text your clients, does not touch your AMS without you wiring that connection deliberately, and does not replace your CSR. It drafts, summarizes, watches, and remembers. People approve and send. If someone promises you a robot that runs your agency unattended, be suspicious of them, not just of us.</p>
+
+  <div class="cta" style="margin-top:28px">
+    <a class="btn solid" href="https://calendly.com/agentleadengine/meet-with-sam">Book a 15 minute walkthrough</a>
+    <a class="btn ghost" href="request-access.html">Request alpha access</a>
+  </div>
+
+  <div class="nextprev">
+    <a href="use-cases.html">&larr; All use cases</a>
+    <a href="for-brokerages.html">For real estate brokerages &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+</body>
+</html>

@@ -31,14 +31,16 @@
       <a href="index.html#install">Install</a>
       <a href="docs.html">Docs</a>
       <a href="guides.html" class="here">Guides</a>
+      <a href="use-cases.html">Use cases</a>
       <a href="get-cronus.html">Get Cronus</a>
-      <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a>
+      <a href="request-access.html">Contact</a>
     </nav>
   </div>
 </header>
 
 <main class="page">
-  <div class="crumb"><a href="guides.html">Guides</a> · 03</div>
+  <div class="crumb"><a href="guides.html">Guides</a>
+      <a href="use-cases.html">Use cases</a> · 03</div>
   <h1>Agent windows</h1>
   <p class="lede">Routing is great until you know exactly which agent you want. The dock at the bottom right gives every agent its own window - a direct line with no middleman.</p>
 
@@ -72,7 +74,7 @@
 </main>
 
 <footer>
-  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a></div>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
 </footer>
 
 <script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
