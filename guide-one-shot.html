@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide: The one-shot prompt - Cronus Agent</title>
+<meta name="description" content="Get the right result on the first try: the four-part prompt anatomy, research-backed context rules, and grading your prompt before you send it.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Guide: The one-shot prompt - Cronus Agent">
+<meta property="og:description" content="Get the right result on the first try: the four-part prompt anatomy, research-backed context rules, and grading your prompt before you send it.">
+<meta property="og:url" content="https://cronusagent.com/guide-one-shot.html">
+<meta property="og:image" content="https://cronusagent.com/info-one-shot-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
+    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
+      <a href="ai-safety.html" class="safety">AI Safety</a>
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html" class="here">Guides</a>
+      <a href="use-cases.html">Use cases</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="request-access.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="guides.html">Guides</a> · 14</div>
+  <h1>The one-shot prompt</h1>
+  <p class="lede">A vague prompt costs five rounds of "no, not like that." A complete one gets the right result the first time. This is the checklist, with the research behind it.</p>
+
+  <figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin-bottom:8px">
+    <video controls preload="metadata" poster="info-one-shot-poster.jpg" style="display:block;width:100%;height:auto">
+      <source src="info-one-shot.mp4" type="video/mp4">
+    </video>
+  </figure>
+  <p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">1 minute 53 seconds · animated infographic · sound on</p>
+
+  <h2 class="first">Why this matters</h2>
+  <div class="why">
+    <div class="t">A model fills every gap with a guess</div>
+    <p>Whatever you leave out of the prompt, the model invents: the goal, the audience, the definition of done. One-shot prompting is just leaving no gaps worth guessing about. It is not a talent. It is a habit with a checklist.</p>
+  </div>
+
+  <h2>The four-part anatomy</h2>
+  <ol>
+    <li><b>Goal.</b> What you want, and where. Which file, which page, which account. "Improve the email" is a wish; "shorten the follow-up email to under 100 words" is a goal.</li>
+    <li><b>Context.</b> The facts the model cannot guess: the exact error message, who the audience is, what was already tried, the constraint that matters.</li>
+    <li><b>Output spec.</b> The shape of done: format, length, tone, what to include and what to leave out. If you want a table, say table.</li>
+    <li><b>Done check.</b> How you will know it worked: a test you can actually run. "Done when the checkout page loads without the error."</li>
+  </ol>
+  <p>Miss one part and the model fills that gap for you, confidently. The <a href="safety-why.html">why-AI-guesses explainer</a> covers what happens next.</p>
+
+  <h2>The context rules</h2>
+  <p>These come from research, not taste (both studies are on the <a href="ai-safety.html">AI safety hub</a>):</p>
+  <ul>
+    <li><b>Only what is needed.</b> Model accuracy falls as input grows, well before the context window is full. Every extra paragraph you paste is a place for your one important fact to get lost. Trim before you send.</li>
+    <li><b>Edges beat the middle.</b> Models recall the start and end of a prompt best and lose the middle. Put the goal first and the hard constraint last, never buried between pasted logs.</li>
+    <li><b>One job per prompt.</b> Three asks in one message means the model averages them into one mediocre answer. Split them into three prompts, or delegate them as three jobs.</li>
+  </ul>
+
+  <h2>The worked example</h2>
+  <p><b>The F:</b> <code>fix it</code>. No target, no context, no way to tell when the job is done. This earns the five rounds it causes.</p>
+  <p><b>The A:</b> <code>Fix the checkout bug on cart.js: clicking Pay throws TypeError line 41. Done when the checkout page loads without the error.</code></p>
+  <p>Same request. The A version has all four parts in two sentences: goal (fix the checkout bug on cart.js), context (clicking Pay throws TypeError line 41), and a done check you can run. A one-shot prompt does not need to be long. It needs to be complete.</p>
+
+  <h2>Verify before you send</h2>
+  <p>The last habit: grade the prompt, not just the answer. In the Cronus composer, the <b>A&plusmn;</b> button grades your draft A to F against exactly this anatomy: clarity, context, output spec, structure, examples, constraints. Each grade tells you which part is missing in plain words.</p>
+  <p><b>Fix it for me</b> then writes the A-standard rewrite, and you choose: use it, or keep yours. It never replaces your words on its own. The <a href="guide-composer.html">composer guide</a> shows the whole flow on screen.</p>
+
+  <h2>The checklist, to keep</h2>
+  <ul>
+    <li>Goal: what and where?</li>
+    <li>Context: what can the model not guess?</li>
+    <li>Output spec: what shape is done?</li>
+    <li>Done check: what test proves it?</li>
+    <li>Trimmed: is anything in here the model does not need?</li>
+    <li>Edges: goal first, hard constraint last?</li>
+    <li>One job: am I asking for exactly one thing?</li>
+    <li>Graded: did the rater give it an A?</li>
+  </ul>
+
+  <div class="nextprev">
+    <a href="guide-composer.html">&larr; Guide 13: The composer</a>
+    <a href="guides.html">All guides &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent <span id="ver-badge"></span> · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="request-access.html">Contact</a></div>
+</footer>
+
+<script>fetch("/version.json").then(r=>r.json()).then(d=>{if(d&&d.version){var e=document.getElementById("ver-badge");if(e)e.textContent="v"+d.version;}}).catch(()=>{});</script>
+</body>
+</html>
