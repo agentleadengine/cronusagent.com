@@ -18,6 +18,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="docs.css">
+<style>
+  .vgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin: 18px 0 8px; }
+  .vcard { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; text-decoration: none; transition: border-color .15s, transform .12s; }
+  .vcard:hover { border-color: var(--muted); transform: translateY(-2px); }
+  .vcard .thumb { position: relative; }
+  .vcard .thumb img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
+  .vcard .play { position: absolute; inset: 0; display: grid; place-items: center; }
+  .vcard .play span { width: 54px; height: 54px; border-radius: 50%; background: rgba(10,10,9,.72); border: 1.5px solid rgba(245,242,234,.85); display: grid; place-items: center; transition: transform .15s, background .15s; }
+  .vcard:hover .play span { transform: scale(1.1); background: rgba(10,10,9,.88); }
+  .vcard .play svg { margin-left: 4px; }
+  .vcard .dur { position: absolute; right: 10px; bottom: 10px; font: 600 11.5px var(--mono); letter-spacing: .06em; color: var(--ivory); background: rgba(10,10,9,.78); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+  .vcard .vb { padding: 14px 16px; }
+  .vcard .vn { font: 600 11px var(--mono); letter-spacing: .2em; color: var(--dim); margin-bottom: 5px; }
+  .vcard h3 { margin: 0 0 5px; font-size: 16px; }
+  .vcard p { font-size: 13px; color: var(--muted); margin: 0; }
+</style>
 </head>
 <body>
 
@@ -53,15 +69,36 @@
 
 
   <h2 class="first" style="border-top:none;padding-top:0">The series: seven short explainers</h2>
-  <p>Each part is its own page: an animated infographic video plus the plain-words version, with sources. Watch them in order or jump to what you need.</p>
-  <div class="cards">
-    <a class="card" href="safety-why.html"><span class="sig">01</span><h3>Why AI makes things up</h3><p>Prediction is not lookup, and guessing gets rewarded.</p></a>
-    <a class="card" href="safety-context.html"><span class="sig">02</span><h3>Context</h3><p>A desk, not a warehouse. Context rot and the lost middle.</p></a>
-    <a class="card" href="safety-grounding.html"><span class="sig">03</span><h3>Grounding</h3><p>What memory measurably does to hallucinations.</p></a>
-    <a class="card" href="safety-actions.html"><span class="sig">04</span><h3>Actions</h3><p>Guardrails, spend caps, and the approvals inbox.</p></a>
-    <a class="card" href="safety-watching.html"><span class="sig">05</span><h3>Watching</h3><p>Honest status, the activity log, the read-only audit.</p></a>
-    <a class="card" href="safety-keys.html"><span class="sig">06</span><h3>Keys and data</h3><p>A write-only vault and models that keep words home.</p></a>
-    <a class="card" href="safety-limits.html"><span class="sig">07</span><h3>What none of this can do</h3><p>The honest ending: the last check is yours.</p></a>
+  <p>Seven animated videos, each on its own page with the plain-words version and sources underneath. Watch them in order or jump to what you need.</p>
+  <div class="vgrid">
+    <a class="vcard" href="safety-why.html">
+      <div class="thumb"><img src="info-why-ai-guesses-poster.jpg" alt="Why AI makes things up - animated video"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">1:18</div></div>
+      <div class="vb"><div class="vn">PART 01 &middot; VIDEO</div><h3>Why AI makes things up</h3><p>Prediction is not lookup, and guessing gets rewarded.</p></div>
+    </a>
+    <a class="vcard" href="safety-context.html">
+      <div class="thumb"><img src="info-context-limits-poster.jpg" alt="Context - animated video"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">1:14</div></div>
+      <div class="vb"><div class="vn">PART 02 &middot; VIDEO</div><h3>Context</h3><p>A desk, not a warehouse. Context rot and the lost middle.</p></div>
+    </a>
+    <a class="vcard" href="safety-grounding.html">
+      <div class="thumb"><img src="info-grounding-poster.jpg" alt="Grounding - animated video"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">1:01</div></div>
+      <div class="vb"><div class="vn">PART 03 &middot; VIDEO</div><h3>Grounding</h3><p>What memory measurably does to hallucinations.</p></div>
+    </a>
+    <a class="vcard" href="safety-actions.html">
+      <div class="thumb"><img src="info-actions-poster.jpg" alt="Actions - animated video"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">1:00</div></div>
+      <div class="vb"><div class="vn">PART 04 &middot; VIDEO</div><h3>Actions</h3><p>Guardrails, spend caps, and the approvals inbox.</p></div>
+    </a>
+    <a class="vcard" href="safety-watching.html">
+      <div class="thumb"><img src="info-watching-poster.jpg" alt="Watching - animated video"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">0:56</div></div>
+      <div class="vb"><div class="vn">PART 05 &middot; VIDEO</div><h3>Watching</h3><p>Honest status, the activity log, the read-only audit.</p></div>
+    </a>
+    <a class="vcard" href="safety-keys.html">
+      <div class="thumb"><img src="info-keys-poster.jpg" alt="Keys and data - animated video"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">1:02</div></div>
+      <div class="vb"><div class="vn">PART 06 &middot; VIDEO</div><h3>Keys and data</h3><p>A write-only vault and models that keep words home.</p></div>
+    </a>
+    <a class="vcard" href="safety-limits.html">
+      <div class="thumb"><img src="info-limits-poster.jpg" alt="What none of this can do - animated video"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">0:52</div></div>
+      <div class="vb"><div class="vn">PART 07 &middot; VIDEO</div><h3>What none of this can do</h3><p>The honest ending: the last check is yours.</p></div>
+    </a>
   </div>
 
   <h2>Why AI makes things up</h2>
