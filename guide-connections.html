@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide: Connections and credentials - Cronus Agent</title>
+<meta name="description" content="Wiring tools into your agents with MCP, and keeping every key in an encrypted vault that never leaks into a prompt.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Guide: Connections and credentials - Cronus Agent">
+<meta property="og:description" content="Wiring tools into your agents with MCP, and keeping every key in an encrypted vault that never leaks into a prompt.">
+<meta property="og:url" content="https://cronusagent.com/guide-connections.html">
+<meta property="og:image" content="https://cronusagent.com/guide-connections-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <nav class="links">
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html" class="here">Guides</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="guides.html">Guides</a> · 07</div>
+  <h1>Connections and credentials</h1>
+  <p class="lede">Agents are only as useful as what they can reach - and only as safe as where their keys live. Two pages handle both: Connections and Credentials.</p>
+
+  <figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin-bottom:8px">
+    <video controls preload="metadata" poster="guide-connections-poster.jpg" style="display:block;width:100%;height:auto">
+      <source src="guide-connections.mp4" type="video/mp4">
+    </video>
+  </figure>
+  <p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">narrated · sound on</p>
+
+  <h2 class="first">Why this matters</h2>
+  <div class="why">
+    <div class="t">Credentials are not context</div>
+    <p>The fastest way to leak a secret is to let it ride along inside a model conversation. The vault exists so that agents can use a connection without ever seeing the key that powers it.</p>
+  </div>
+
+  <h2>The walkthrough</h2>
+  <h3>Connections: one map of everything</h3>
+  <p>The Connections page lists every tool, agent, and skill Cronus can reach - and lets you register your own. If an agent can use it, it is on this map; there is no invisible capability.</p>
+  <h3>MCP: the USB of AI tools</h3>
+  <p>Tool connections speak MCP, the open standard for wiring AI to outside services. Connect a tool once and any agent that needs it can reach it. The MCP page shows each server and whether it is on and reachable right now.</p>
+  <h3>The Credentials vault</h3>
+  <p>Keys and passwords go into the vault, encrypted on disk. Once saved, the value is never displayed again - not in the interface, not in logs, and never pasted into a prompt. If you need to rotate a key, you replace it; you never read it back.</p>
+  <h3>The habit worth keeping</h3>
+  <p>Give agents the narrowest access that does the job - the same way you would onboard a new employee. Grant thoughtfully, and let Tool Health confirm what is actually connected.</p>
+
+  <div class="nextprev">
+    <a href="guide-local-models.html">&larr; Previous guide</a>
+    <a href="guide-watching.html">Next guide &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a></div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guide: Chat and routing - Cronus Agent</title>
+<meta name="description" content="How Oracle routes your requests: the four moves, delegations with a definition of done, the model picker, and watching jobs run.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Guide: Chat and routing - Cronus Agent">
+<meta property="og:description" content="How Oracle routes your requests: the four moves, delegations with a definition of done, the model picker, and watching jobs run.">
+<meta property="og:url" content="https://cronusagent.com/guide-chat-routing.html">
+<meta property="og:image" content="https://cronusagent.com/guide-chat-routing-poster.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <nav class="links">
+      <a href="index.html#install">Install</a>
+      <a href="docs.html">Docs</a>
+      <a href="guides.html" class="here">Guides</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="guides.html">Guides</a> · 02</div>
+  <h1>Chat and routing</h1>
+  <p class="lede">Oracle looks like a chat box. Underneath it is a router that checks every prompt before anything runs. This guide shows you the four moves and how to watch your work happen.</p>
+
+  <figure style="border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--panel);margin-bottom:8px">
+    <video controls preload="metadata" poster="guide-chat-routing-poster.jpg" style="display:block;width:100%;height:auto">
+      <source src="guide-chat-routing.mp4" type="video/mp4">
+    </video>
+  </figure>
+  <p style="font-size:12.5px;color:var(--dim);text-align:center;margin-bottom:34px">narrated · sound on</p>
+
+  <h2 class="first">Why this matters</h2>
+  <div class="why">
+    <div class="t">A prompt should be a checked request, not a trigger pull</div>
+    <p>Agents fail by being obedient at full speed. Routing every ask through one brain that can answer, delegate, clarify, or act is how Cronus keeps obedience from becoming the failure mode.</p>
+  </div>
+
+  <h2>The walkthrough</h2>
+  <h3>The four moves</h3>
+  <p>Every message you send gets read by the router, which picks exactly one move: <b>answer</b> (small talk, questions it already knows), <b>delegate</b> (real work, handed to exactly one agent, named out loud), <b>clarify</b> (one question back when your request genuinely has two readings), or <b>task</b> (quick actions it can do itself).</p>
+  <h3>Delegations carry a definition of done</h3>
+  <p>When Cronus hands work to an agent, it does not forward your chat. It writes a self-contained instruction with the context baked in, why that agent was chosen, and a checkable sentence describing what finished-and-correct looks like. The result gets judged against that sentence.</p>
+  <h3>Pick the brain</h3>
+  <p>The model chip in the top bar chooses which model Cronus thinks with. Local models are free and private; cloud models are faster and sharper. Click, switch, done - your history, memory, and setup do not change.</p>
+  <h3>Watch it work</h3>
+  <p>Delegated jobs run in the background. The <b>Activity</b> page shows each one as a worker at a desk, and agent windows stream raw output. If something fails, it looks like a failure - never a dressed-up success.</p>
+
+  <div class="nextprev">
+    <a href="guide-getting-started.html">&larr; Previous guide</a>
+    <a href="guide-agent-windows.html">Next guide &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a></div>
+</footer>
+
+</body>
+</html>
