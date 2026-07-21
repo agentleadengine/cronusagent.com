@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security - Cronus Agent</title>
+<meta name="description" content="The Cronus threat model in plain words: what it protects against, how, and - just as important - what it cannot protect you from.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Cronus Agent">
+<meta property="og:title" content="Security - Cronus Agent">
+<meta property="og:description" content="The Cronus threat model in plain words: what it protects against, how, and - just as important - what it cannot protect you from.">
+<meta property="og:url" content="https://cronusagent.com/security.html">
+<meta property="og:image" content="https://cronusagent.com/shot-dashboard.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="docs.css">
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <img src="icon.png" alt="">
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
+    <nav class="links">
+      <a href="index.html#install">Install</a>
+      <a href="docs.html" class="here">Docs</a>
+      <a href="mission.html">Mission</a>
+      <a href="get-cronus.html">Get Cronus</a>
+      <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page">
+  <div class="crumb"><a href="docs.html">Docs</a> · Security</div>
+  <h1>Security, in plain words</h1>
+  <p class="lede">The <a href="mission.html">Mission page</a> explains our safety philosophy. This page is the practical version: the specific risks of running AI agents, what Cronus does about each one, and what it honestly cannot do for you.</p>
+
+  <h2 class="first">The risks that actually matter</h2>
+  <p>When people worry about AI, they picture wrong answers. The riskier failures are quieter: context leaking somewhere it should not, an agent doing something real that you did not intend, a credential ending up inside a prompt, or an imported ability doing more than it advertised. Cronus's protections map to those four.</p>
+
+  <h2>Context leaks</h2>
+  <ul>
+    <li><b>Rooms by default.</b> Each agent's conversation is isolated. What you tell one is not ambient background for another.</li>
+    <li><b>Visible handoffs only.</b> Context moves between agents through Orchestra, where you see exactly what moves before it does. There is no invisible shared pool.</li>
+    <li><b>Local by architecture.</b> The dashboard serves only your machine. There is no Cronus cloud holding a copy of your conversations to breach.</li>
+  </ul>
+
+  <h2>Unintended actions</h2>
+  <ul>
+    <li><b>One agent per job, named.</b> Cronus routes each request to exactly one agent and tells you which. No silent fan-out.</li>
+    <li><b>Clarify over guess.</b> An ambiguous request triggers a question, not a best guess executed at machine speed.</li>
+    <li><b>Raw output, always.</b> Agent windows stream the real work. A failure looks like a failure, never a dressed-up success.</li>
+    <li><b>Approvals on risky actions.</b> Agents that act on the real world (like OpenClaw) support explicit approval gates, so capability never has to mean autonomy.</li>
+  </ul>
+
+  <h2>Credentials</h2>
+  <ul>
+    <li><b>An encrypted vault, write-only by design.</b> Keys you save are encrypted on disk, and once saved, the value is never displayed again - not in the UI, not in logs, not in prompts.</li>
+    <li><b>Keys are not context.</b> The vault exists precisely so that secrets never ride along inside a model conversation.</li>
+  </ul>
+
+  <h2>Imported abilities</h2>
+  <ul>
+    <li><b>Skills are readable files.</b> Before you let an agent use an ability, you can open it and read what it does. No black boxes.</li>
+    <li><b>Community skills carry provenance.</b> Skills from the public market ship with documentation of what they do and where they came from, and are scanned before publishing.</li>
+  </ul>
+
+  <h2>What Cronus cannot protect you from</h2>
+  <p>Honesty is the policy, so here is the other column:</p>
+  <ul>
+    <li><b>A compromised computer.</b> Cronus lives on your machine; if the machine itself is compromised, so is everything on it. Keep your OS updated and your disk encrypted.</li>
+    <li><b>What you send to a provider.</b> Route a message to a cloud model and that provider receives it, under their terms. Local models exist exactly for the content you never want to leave home.</li>
+    <li><b>Access you hand over.</b> If you give an agent your email and approve its sends, it can send email. The approval gates only help if you read them before clicking yes.</li>
+    <li><b>A skill you approved without reading.</b> We make abilities inspectable; we cannot make you inspect them.</li>
+    <li><b>Alpha software reality.</b> Cronus is young. We fix issues fast and never hide them, but "battle-tested" is earned over years, and we will not claim it early.</li>
+  </ul>
+
+  <div class="why">
+    <div class="t">Found something?</div>
+    <p>If you find a security issue, email <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20security">agentleadengine@gmail.com</a> with the details. Security reports get answered first, before feature requests, every time.</p>
+  </div>
+
+  <div class="nextprev">
+    <a href="use-cases.html">&larr; What a week looks like</a>
+    <a href="mission.html">The mission behind this &rarr;</a>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">Cronus Agent · © Agent Lead Engine LLC · All rights reserved · <a href="disclaimer.html">Disclaimer</a> · <a href="mailto:agentleadengine@gmail.com?subject=Cronus%20alpha%20access">Contact</a></div>
+</footer>
+
+</body>
+</html>
