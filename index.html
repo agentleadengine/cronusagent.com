@@ -50,7 +50,7 @@
   .nav .links a:hover { color: var(--ivory); }
 
   /* hero */
-  .hero { position: relative; padding: 96px 0 72px; overflow: hidden; }
+  .hero { position: relative; padding: 96px 0 72px; overflow: hidden; text-align: center; }
   .hero::after {
     content: "Cronus"; position: absolute; right: -2%; bottom: -38px;
     font: 800 clamp(140px, 24vw, 280px)/1 var(--sans); letter-spacing: -.05em;
@@ -62,13 +62,13 @@
   }
   h1 {
     font: 800 clamp(40px, 6.2vw, 68px)/1.06 var(--sans);
-    letter-spacing: -.035em; max-width: 17ch;
+    letter-spacing: -.035em; max-width: 17ch; margin: 0 auto;
   }
   .hero p.lede {
     font: 400 clamp(16.5px, 2vw, 19px)/1.6 var(--sans);
-    color: var(--muted); max-width: 52ch; margin: 26px 0 38px;
+    color: var(--muted); max-width: 52ch; margin: 26px auto 38px;
   }
-  .cta { display: flex; gap: 14px; flex-wrap: wrap; }
+  .cta { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
   .btn {
     display: inline-flex; align-items: center; gap: 9px;
     padding: 13px 22px; border-radius: 10px; font: 600 14.5px var(--sans);
@@ -79,7 +79,7 @@
   .btn.ghost:hover { border-color: var(--muted); }
 
   /* agent strip */
-  .agents { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 54px; }
+  .agents { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 54px; justify-content: center; }
   .chip {
     display: flex; align-items: center; gap: 9px;
     border: 1px solid var(--line); border-radius: 999px;
@@ -89,8 +89,8 @@
 
   /* sections */
   section { padding: 72px 0; border-top: 1px solid var(--line); }
-  h2 { font: 700 clamp(24px, 3.2vw, 32px)/1.2 var(--sans); letter-spacing: -.025em; margin-bottom: 14px; }
-  .sub { color: var(--muted); max-width: 60ch; margin-bottom: 36px; }
+  h2 { font: 700 clamp(24px, 3.2vw, 32px)/1.2 var(--sans); letter-spacing: -.025em; margin-bottom: 14px; text-align: center; }
+  .sub { color: var(--muted); max-width: 60ch; margin: 0 auto 36px; text-align: center; }
 
   .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 14px; }
   .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 22px; }
@@ -98,7 +98,7 @@
   .card p { font-size: 14px; color: var(--muted); }
 
   /* install */
-  .tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; }
+  .tabs { display: flex; gap: 8px; margin-bottom: 18px; flex-wrap: wrap; justify-content: center; }
   .tab {
     padding: 9px 18px; border-radius: 999px; border: 1px solid var(--line);
     background: none; color: var(--muted); font: 600 13.5px var(--sans); cursor: pointer;
@@ -175,6 +175,7 @@
       <a href="#what">What it is</a>
       <a href="#install">Install</a>
       <a href="docs.html">Docs</a>
+      <a href="mission.html">Mission</a>
       <a href="https://github.com/agentleadengine/cronus-agent">GitHub</a>
     </nav>
   </div>
