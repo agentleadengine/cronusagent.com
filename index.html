@@ -306,6 +306,20 @@
     .mibar { transition: none; }
     .mibar.show { transition: none; }
   }
+  .vgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .vcard { display: block; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; text-decoration: none; transition: border-color .15s, transform .12s; }
+  .vcard:hover { border-color: var(--muted); transform: translateY(-2px); }
+  .vcard .thumb { position: relative; }
+  .vcard .thumb img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
+  .vcard .play { position: absolute; inset: 0; display: grid; place-items: center; }
+  .vcard .play span { width: 54px; height: 54px; border-radius: 50%; background: rgba(10,10,9,.72); border: 1.5px solid rgba(245,242,234,.85); display: grid; place-items: center; transition: transform .15s; }
+  .vcard:hover .play span { transform: scale(1.1); }
+  .vcard .play svg { margin-left: 4px; }
+  .vcard .dur { position: absolute; right: 10px; bottom: 10px; font: 600 11.5px var(--mono); color: var(--ivory); background: rgba(10,10,9,.78); border: 1px solid var(--line); border-radius: 6px; padding: 3px 8px; }
+  .vcard .vb { padding: 14px 16px; text-align: left; }
+  .vcard .vn { font: 600 11px var(--mono); letter-spacing: .2em; color: var(--dim); margin-bottom: 5px; }
+  .vcard h3 { margin: 0 0 5px; font-size: 16px; text-align: left; }
+  .vcard p { font-size: 13px; color: var(--muted); margin: 0; }
 </style>
 </head>
 <body>
@@ -350,13 +364,6 @@
   </div>
 </div>
 
-<section class="seeit" style="border-top:none;padding-top:0">
-  <div class="wrap">
-    <figure class="shot"><img src="demo-chat.gif" alt="Live demo: typing a question into Cronus chat and getting an answer" loading="lazy"></figure>
-    <div class="shotcap">The actual app, live: ask a question, watch Cronus think, get the answer.</div>
-  </div>
-</section>
-
 <section id="video">
   <div class="wrap">
     <h2>Watch the demo</h2>
@@ -389,13 +396,35 @@
   </div>
 </section>
 
+<section id="ideas">
+  <div class="wrap">
+    <h2>The ideas behind it, in about a minute each</h2>
+    <p class="sub">Animated explainers with real research on screen. Why AI makes things up, and what actually fixes it.</p>
+    <div class="vgrid">
+      <a class="vcard" href="safety-why.html">
+        <div class="thumb"><img src="info-why-ai-guesses-poster.jpg" alt="Why AI makes things up - animated video" loading="lazy"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">1:18</div></div>
+        <div class="vb"><div class="vn">AI SAFETY · 01</div><h3>Why AI makes things up</h3><p>Prediction is not lookup, and guessing gets rewarded.</p></div>
+      </a>
+      <a class="vcard" href="safety-context.html">
+        <div class="thumb"><img src="info-context-limits-poster.jpg" alt="Context rot and the lost middle - animated video" loading="lazy"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">1:14</div></div>
+        <div class="vb"><div class="vn">AI SAFETY · 02</div><h3>Context rot and the lost middle</h3><p>More input, worse answers. The research, drawn out.</p></div>
+      </a>
+      <a class="vcard" href="guide-one-shot.html">
+        <div class="thumb"><img src="info-one-shot-poster.jpg" alt="The one-shot prompt - animated video" loading="lazy"><div class="play"><span><svg width="20" height="22" viewBox="0 0 20 22"><path d="M2 1.5 L18 11 L2 20.5 Z" fill="#f5f2ea"></path></svg></span></div><div class="dur">1:53</div></div>
+        <div class="vb"><div class="vn">GUIDE 14</div><h3>The one-shot prompt</h3><p>Four parts, every time. Get it right on the first try.</p></div>
+      </a>
+    </div>
+    <p style="text-align:center;margin-top:22px;font-size:14px"><a href="ai-safety.html">All seven AI safety explainers &rarr;</a></p>
+  </div>
+</section>
+
 <section id="own">
   <div class="wrap">
     <h2>The most important part: you own all of it</h2>
     <p class="sub">Cloud AI rents you intelligence and keeps your history as the hostage. Cancel, lose access, or watch a product get worse, and everything it knew about you is gone. Cronus flips that: models are replaceable engines, and everything that makes the stack yours lives on your disk.</p>
     <figure class="shot" style="max-width:860px;margin:0 auto 26px">
-      <video controls preload="metadata" poster="benefits-own-it-poster.jpg" style="display:block;width:100%;height:auto">
-        <source src="benefits-own-it.mp4" type="video/mp4">
+      <video controls preload="metadata" poster="info-keys-poster.jpg" style="display:block;width:100%;height:auto">
+        <source src="info-keys.mp4" type="video/mp4">
       </video>
     </figure>
     <div class="grid">
