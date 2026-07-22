@@ -63,8 +63,6 @@
   .nav.open .menu-btn .bars span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   .nav.open .menu-btn .bars span:nth-child(2) { opacity: 0; }
   .nav.open .menu-btn .bars span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-  .nav .links a.safety { font-size: 17px; font-weight: 800; color: var(--ivory); letter-spacing: -.01em; }
-  .nav .links a.safety:hover { text-decoration: underline; }
   @media (max-width: 700px) {
     .nav { flex-wrap: wrap; padding: 12px 18px; }
     .menu-btn { display: inline-flex; align-items: center; }
@@ -74,7 +72,7 @@
       transition: max-height .34s ease, padding .34s ease, opacity .24s ease, visibility 0s linear .34s;
     }
     .nav.open .links {
-      max-height: 430px; padding: 4px 0 8px; visibility: visible; opacity: 1;
+      max-height: 78vh; overflow-y: auto; padding: 4px 0 8px; visibility: visible; opacity: 1;
       transition: max-height .34s ease, padding .34s ease, opacity .24s ease .04s, visibility 0s;
     }
     .nav .links a { padding: 11px 4px; border-top: 1px solid var(--line); font-size: 15px; opacity: 0; transform: translateY(-8px); transition: opacity .25s ease, transform .25s ease; }
@@ -320,6 +318,32 @@
   .vcard .vn { font: 600 11px var(--mono); letter-spacing: .2em; color: var(--dim); margin-bottom: 5px; }
   .vcard h3 { margin: 0 0 5px; font-size: 16px; text-align: left; }
   .vcard p { font-size: 13px; color: var(--muted); margin: 0; }
+  
+  /* dropdown nav */
+  .navgroup { position: relative; }
+  .navgroup > a { display: inline-flex; align-items: center; gap: 6px; }
+  .navgroup > a::after { content: "\25BE"; font-size: 8.5px; opacity: .5; transform: translateY(1px); }
+  .nav .links a.safety { font-size: 14px; font-weight: 700; color: var(--ivory); letter-spacing: 0; }
+  .dd { display: none; position: absolute; top: 100%; left: -14px; padding-top: 14px; z-index: 60; }
+  .navgroup:hover .dd, .navgroup:focus-within .dd { display: block; }
+  .navgroup.ddright .dd { left: auto; right: -14px; }
+  .ddp { background: color-mix(in srgb, var(--ink) 94%, transparent); backdrop-filter: blur(14px); border: 1px solid var(--line); border-radius: 14px; padding: 10px; min-width: 252px; box-shadow: 0 26px 70px rgba(0,0,0,.6); }
+  .dd a { display: block; padding: 8px 12px; border-radius: 9px; font-size: 13.5px; color: var(--muted); text-decoration: none; white-space: nowrap; }
+  .dd a:hover { background: rgba(245,242,234,.06); color: var(--ivory); }
+  .dd a span { display: block; font-size: 11.5px; color: var(--dim); margin-top: 2px; white-space: normal; max-width: 240px; font-weight: 400; }
+  .ddh { font: 600 10.5px var(--mono); letter-spacing: .18em; text-transform: uppercase; color: var(--dim); padding: 10px 12px 4px; }
+  .ddcols { display: flex; gap: 8px; }
+  @media (max-width: 700px) {
+    .navgroup { width: 100%; }
+    .navgroup > a::after { content: ""; }
+    .dd { display: block; position: static; padding: 0; }
+    .ddp { background: none; border: none; box-shadow: none; padding: 0 0 4px; min-width: 0; backdrop-filter: none; }
+    .ddcols { flex-direction: column; gap: 0; }
+    .nav .links .dd a { border-top: none; padding: 8px 4px 8px 20px; font-size: 14px; white-space: normal; }
+    .dd a span { display: none; }
+    .ddh { padding: 8px 4px 2px 20px; }
+  }
+  
 </style>
 </head>
 <body>
@@ -327,16 +351,63 @@
 <header>
   <div class="nav">
     <img src="icon.png" alt="">
-    <span class="name">Cronus Agent</span>
+    <span class="name"><a href="index.html">Cronus Agent</a></span>
     <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
-    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
-      <a href="ai-safety.html" class="safety">AI Safety</a>
-      <a href="#benefits">Benefits</a>
-      <a href="#install">Install</a>
-      <a href="docs.html">Docs</a>
-      <a href="guides.html">Guides</a>
-      <a href="mission.html">Mission</a>
-      <a href="get-cronus.html">Get Cronus</a>
+    <nav class="links" onclick="if(event.target.closest('a'))this.closest('.nav').classList.remove('open')">
+      <div class="navgroup">
+        <a href="ai-safety.html" class="safety">AI Safety</a>
+        <div class="dd"><div class="ddp">
+          <a href="ai-safety.html">The AI safety hub<span>The overview video, the plain-words page, and the sources</span></a>
+          <div class="ddh">The series</div>
+          <a href="safety-why.html">01 &middot; Why AI makes things up</a>
+          <a href="safety-context.html">02 &middot; Context</a>
+          <a href="safety-grounding.html">03 &middot; Grounding</a>
+          <a href="safety-actions.html">04 &middot; Actions</a>
+          <a href="safety-watching.html">05 &middot; Watching</a>
+          <a href="safety-keys.html">06 &middot; Keys and data</a>
+          <a href="safety-limits.html">07 &middot; What none of this can do</a>
+        </div></div>
+      </div>
+      <div class="navgroup">
+        <a href="docs.html">Learn</a>
+        <div class="dd"><div class="ddp"><div class="ddcols">
+          <div>
+            <div class="ddh">Docs</div>
+            <a href="docs.html">Docs hub</a>
+            <a href="ai-basics.html">AI words, translated</a>
+            <a href="hindsight.html">Memory, aka Hindsight</a>
+            <a href="security.html">Security, in plain words</a>
+            <a href="why.html">Why use Cronus</a>
+          </div>
+          <div>
+            <div class="ddh">Guides</div>
+            <a href="guide-getting-started.html">01 &middot; Getting started</a>
+            <a href="guide-orchestra.html">05 &middot; Orchestra</a>
+            <a href="guide-composer.html">13 &middot; The composer</a>
+            <a href="guide-one-shot.html">14 &middot; The one-shot prompt</a>
+            <a href="guides.html">All 14 guides &rarr;</a>
+          </div>
+        </div></div></div>
+      </div>
+      <div class="navgroup">
+        <a href="use-cases.html">Product</a>
+        <div class="dd"><div class="ddp">
+          <a href="index.html#benefits">What changes for you</a>
+          <a href="use-cases.html">Use cases</a>
+          <a href="mission.html">Mission</a>
+          <a href="for-insurance.html">For insurance agencies</a>
+          <a href="for-brokerages.html">For real estate brokerages</a>
+          <a href="changelog.html">Changelog</a>
+        </div></div>
+      </div>
+      <div class="navgroup ddright">
+        <a href="index.html#install">Get Cronus</a>
+        <div class="dd"><div class="ddp">
+          <a href="index.html#install">Install it yourself</a>
+          <a href="get-cronus.html">We set it up for you</a>
+          <a href="request-access.html">Request alpha access</a>
+        </div></div>
+      </div>
       <a href="request-access.html">Contact</a>
     </nav>
   </div>

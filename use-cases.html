@@ -26,13 +26,61 @@
     <img src="icon.png" alt="">
     <span class="name"><a href="index.html">Cronus Agent</a></span>
     <button class="menu-btn" aria-label="Menu" onclick="this.closest('.nav').classList.toggle('open')"><span class="bars"><span></span><span></span><span></span></span></button>
-    <nav class="links" onclick="this.closest('.nav').classList.remove('open')">
-      <a href="ai-safety.html" class="safety">AI Safety</a>
-      <a href="index.html#install">Install</a>
-      <a href="docs.html" class="here">Docs</a>
-      <a href="guides.html">Guides</a>
-      <a href="mission.html">Mission</a>
-      <a href="get-cronus.html">Get Cronus</a>
+    <nav class="links" onclick="if(event.target.closest('a'))this.closest('.nav').classList.remove('open')">
+      <div class="navgroup">
+        <a href="ai-safety.html" class="safety">AI Safety</a>
+        <div class="dd"><div class="ddp">
+          <a href="ai-safety.html">The AI safety hub<span>The overview video, the plain-words page, and the sources</span></a>
+          <div class="ddh">The series</div>
+          <a href="safety-why.html">01 &middot; Why AI makes things up</a>
+          <a href="safety-context.html">02 &middot; Context</a>
+          <a href="safety-grounding.html">03 &middot; Grounding</a>
+          <a href="safety-actions.html">04 &middot; Actions</a>
+          <a href="safety-watching.html">05 &middot; Watching</a>
+          <a href="safety-keys.html">06 &middot; Keys and data</a>
+          <a href="safety-limits.html">07 &middot; What none of this can do</a>
+        </div></div>
+      </div>
+      <div class="navgroup">
+        <a href="docs.html">Learn</a>
+        <div class="dd"><div class="ddp"><div class="ddcols">
+          <div>
+            <div class="ddh">Docs</div>
+            <a href="docs.html">Docs hub</a>
+            <a href="ai-basics.html">AI words, translated</a>
+            <a href="hindsight.html">Memory, aka Hindsight</a>
+            <a href="security.html">Security, in plain words</a>
+            <a href="why.html">Why use Cronus</a>
+          </div>
+          <div>
+            <div class="ddh">Guides</div>
+            <a href="guide-getting-started.html">01 &middot; Getting started</a>
+            <a href="guide-orchestra.html">05 &middot; Orchestra</a>
+            <a href="guide-composer.html">13 &middot; The composer</a>
+            <a href="guide-one-shot.html">14 &middot; The one-shot prompt</a>
+            <a href="guides.html">All 14 guides &rarr;</a>
+          </div>
+        </div></div></div>
+      </div>
+      <div class="navgroup">
+        <a href="use-cases.html">Product</a>
+        <div class="dd"><div class="ddp">
+          <a href="index.html#benefits">What changes for you</a>
+          <a href="use-cases.html">Use cases</a>
+          <a href="mission.html">Mission</a>
+          <a href="for-insurance.html">For insurance agencies</a>
+          <a href="for-brokerages.html">For real estate brokerages</a>
+          <a href="changelog.html">Changelog</a>
+        </div></div>
+      </div>
+      <div class="navgroup ddright">
+        <a href="index.html#install">Get Cronus</a>
+        <div class="dd"><div class="ddp">
+          <a href="index.html#install">Install it yourself</a>
+          <a href="get-cronus.html">We set it up for you</a>
+          <a href="request-access.html">Request alpha access</a>
+        </div></div>
+      </div>
       <a href="request-access.html">Contact</a>
     </nav>
   </div>
